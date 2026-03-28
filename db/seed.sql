@@ -25,7 +25,7 @@ VALUES (
       'name', 'Leah Fashion',
       'tagline', 'Wedding couture studio',
       'logo', 'assets/images/brand/leah-fashion-logo.png',
-      'headingFont', 'Plus Jakarta Sans',
+      'headingFont', 'Cormorant Garamond',
       'bodyFont', 'Plus Jakarta Sans'
     ),
     'hero', JSON_OBJECT(

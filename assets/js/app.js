@@ -1,6 +1,7 @@
 "use strict";
 
 const FONT_OPTIONS = {
+  "Cormorant Garamond": '"Cormorant Garamond", Georgia, serif',
   "Plus Jakarta Sans": '"Plus Jakarta Sans", "Segoe UI", sans-serif'
 };
 
@@ -44,7 +45,7 @@ const defaultContent = {
     name: "Leah Fashion",
     tagline: "Wedding couture studio",
     logo: "assets/images/brand/leah-fashion-logo.png",
-    headingFont: "Plus Jakarta Sans",
+    headingFont: "Cormorant Garamond",
     bodyFont: "Plus Jakarta Sans"
   },
   hero: {
@@ -1014,11 +1015,11 @@ function applyTheme() {
   root.style.setProperty("--muted", siteContent.theme.muted);
   root.style.setProperty(
     "--heading-font",
-    FONT_OPTIONS[siteContent.brand.headingFont] || FONT_OPTIONS["Plus Jakarta Sans"]
+    FONT_OPTIONS[siteContent.brand.headingFont] || FONT_OPTIONS["Cormorant Garamond"]
   );
   root.style.setProperty(
     "--display-font",
-    FONT_OPTIONS[siteContent.brand.headingFont] || FONT_OPTIONS["Plus Jakarta Sans"]
+    FONT_OPTIONS[siteContent.brand.headingFont] || FONT_OPTIONS["Cormorant Garamond"]
   );
   root.style.setProperty(
     "--body-font",
@@ -1041,8 +1042,8 @@ async function loadContent() {
     const payload = await response.json();
     const merged = mergeWithDefaults(defaultContent, payload.content || {});
 
-    merged.brand.headingFont = "Plus Jakarta Sans";
-    merged.brand.bodyFont = "Plus Jakarta Sans";
+    merged.brand.headingFont = defaultContent.brand.headingFont;
+    merged.brand.bodyFont = defaultContent.brand.bodyFont;
 
     if (
       !merged.hero.title ||
