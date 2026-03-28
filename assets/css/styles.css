@@ -50,6 +50,18 @@ body.panel-open {
   overflow: hidden;
 }
 
+main,
+.hero-section,
+.content-section,
+.page-hero,
+.detail-section,
+.about-section,
+.contact-section,
+.site-footer {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -2334,6 +2346,7 @@ blockquote {
 
   .brand {
     min-width: 0;
+    max-width: 100%;
     gap: 0.72rem;
   }
 
@@ -2344,11 +2357,21 @@ blockquote {
 
   .brand-copy {
     min-width: 0;
+    max-width: 100%;
   }
 
   .brand-name {
     font-size: 0.96rem;
     letter-spacing: 0.08em;
+  }
+
+  .why-section::before,
+  .catalog-section::before,
+  .about-section::before,
+  .about-section::after,
+  .contact-section::before,
+  .contact-actions::before {
+    display: none;
   }
 
   .hero-copy h1 {
@@ -2499,11 +2522,12 @@ blockquote {
   }
 
   .site-nav {
-    left: 50%;
-    right: auto;
-    width: min(19rem, calc(100vw - 2.3rem));
+    left: auto;
+    right: 0;
+    width: min(18rem, 100%);
+    max-width: 100%;
     top: calc(100% - 0.05rem);
-    transform: translateX(-50%);
+    transform: none;
   }
 
   .nav-toggle {
