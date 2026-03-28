@@ -89,7 +89,10 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
   z-index: 40;
   backdrop-filter: blur(22px) saturate(145%);
   -webkit-backdrop-filter: blur(22px) saturate(145%);
@@ -1974,11 +1977,11 @@ blockquote {
 
 .floating-actions {
   position: fixed;
-  inset: auto auto max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto;
   z-index: 120;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   width: max-content;
   margin: 0;
   gap: 0.72rem;
@@ -2554,7 +2557,7 @@ blockquote {
   }
 
   .floating-actions {
-    inset: auto auto max(0.9rem, env(safe-area-inset-bottom)) max(0.9rem, env(safe-area-inset-left));
+    inset: auto max(0.9rem, env(safe-area-inset-right)) max(0.9rem, env(safe-area-inset-bottom)) auto;
   }
 
   .floating-icon-button {
