@@ -2245,8 +2245,8 @@ blockquote {
   }
 
   .why-layout {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    width: 100%;
+    margin-left: 0;
     padding: 0;
     border-radius: 0;
     gap: 0;
@@ -2288,7 +2288,8 @@ blockquote {
 @media (max-width: 720px) {
   .container {
     width: 100%;
-    padding-inline: 0.65rem;
+    padding-inline-start: max(1rem, env(safe-area-inset-left));
+    padding-inline-end: max(1rem, env(safe-area-inset-right));
   }
 
   :root {
@@ -2397,7 +2398,7 @@ blockquote {
   }
 
   .site-nav {
-    width: min(18rem, calc(100vw - 0.9rem));
+    width: min(18rem, calc(100vw - 2rem));
     top: calc(100% - 0.2rem);
   }
 

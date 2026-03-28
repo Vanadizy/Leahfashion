@@ -35,26 +35,44 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body class="detail-page">
-    <header class="page-header-bar">
-      <div class="container page-header-row">
-        <a class="brand" href="index.html#landing" aria-label="Leah Fashion home">
-          <img src="assets/images/brand/leah-fashion-logo.png" alt="Leah Fashion logo" />
-          <div class="brand-copy">
-            <span class="brand-name">Leah Fashion</span>
-            <span class="brand-tagline">Wedding couture studio</span>
-          </div>
-        </a>
+    <div class="site-shell">
+      <header class="site-header is-landing">
+        <div class="container header-row">
+          <a class="brand" href="index.html#landing" aria-label="Leah Fashion home">
+            <img src="assets/images/brand/leah-fashion-logo.png" alt="Leah Fashion logo" />
+            <div class="brand-copy">
+              <span class="brand-name">Leah Fashion</span>
+              <span class="brand-tagline">Wedding couture studio</span>
+            </div>
+          </a>
 
-        <nav class="page-nav" aria-label="Page">
-          <a href="index.html#landing">Home</a>
-          <a href="catalog.html">Catalog</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle-box" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="visually-hidden">Menu</span>
+          </button>
 
-    <main>
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="index.html#why-us">Why Us</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
       <section class="page-hero page-hero-gallery">
         <div class="container page-hero-copy">
           <p class="section-tag">Gallery Page</p>
@@ -175,69 +193,70 @@
           </div>
         </div>
       </section>
-    </main>
+      </main>
 
-    <footer class="site-footer">
-      <div class="container footer-shell">
-        <div class="footer-brand-block">
-          <div class="footer-brand-row">
-            <img
-              class="footer-logo"
-              src="assets/images/brand/leah-fashion-logo.png"
-              alt="Leah Fashion logo"
-            />
-            <div class="page-footer-note">
-              <span class="brand-name footer-brand">Leah Fashion</span>
-              <p class="footer-note">
-                Leah Fashion blends warm guidance, bridal craftsmanship, and celebration styling
-                for elegant wedding moments.
-              </p>
+      <footer class="site-footer">
+        <div class="container footer-shell">
+          <div class="footer-brand-block">
+            <div class="footer-brand-row">
+              <img
+                class="footer-logo"
+                src="assets/images/brand/leah-fashion-logo.png"
+                alt="Leah Fashion logo"
+              />
+              <div>
+                <span class="brand-name footer-brand">Leah Fashion</span>
+                <p class="footer-note">
+                  Leah Fashion blends warm guidance, bridal craftsmanship, and celebration styling
+                  for elegant wedding moments.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="index.html#landing">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+
+          <div class="footer-social">
+            <p class="mini-label">Follow Leah Fashion</p>
+            <div class="footer-links">
+              <a
+                href="https://instagram.com/leahfashion"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.6 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 6.8A5.2 5.2 0 1 1 6.8 12 5.2 5.2 0 0 1 12 6.8Zm0 1.8A3.4 3.4 0 1 0 15.4 12 3.4 3.4 0 0 0 12 8.6Z"
+                  ></path>
+                </svg>
+                <span class="visually-hidden">Instagram</span>
+              </a>
+              <a
+                href="https://facebook.com/leahfashion"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13.35 22v-8.2h2.76l.41-3.2h-3.17V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14A22.2 22.2 0 0 0 14.17 4c-2.45 0-4.12 1.5-4.12 4.25v2.35H7.3v3.2h2.75V22h3.3Z"
+                  ></path>
+                </svg>
+                <span class="visually-hidden">Facebook</span>
+              </a>
             </div>
           </div>
         </div>
-
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="index.html#landing">Home</a>
-          <a href="catalog.html">Catalog</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-
-        <div class="footer-social">
-          <p class="mini-label">Follow Leah Fashion</p>
-          <div class="footer-links">
-            <a
-              href="https://instagram.com/leahfashion"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.6 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 6.8A5.2 5.2 0 1 1 6.8 12 5.2 5.2 0 0 1 12 6.8Zm0 1.8A3.4 3.4 0 1 0 15.4 12 3.4 3.4 0 0 0 12 8.6Z"
-                ></path>
-              </svg>
-              <span class="visually-hidden">Instagram</span>
-            </a>
-            <a
-              href="https://facebook.com/leahfashion"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              title="Facebook"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M13.35 22v-8.2h2.76l.41-3.2h-3.17V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14A22.2 22.2 0 0 0 14.17 4c-2.45 0-4.12 1.5-4.12 4.25v2.35H7.3v3.2h2.75V22h3.3Z"
-                ></path>
-              </svg>
-              <span class="visually-hidden">Facebook</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
 
     <div class="floating-actions" id="floating-actions">
       <a
