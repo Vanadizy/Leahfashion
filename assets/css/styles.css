@@ -1974,11 +1974,11 @@ blockquote {
 
 .floating-actions {
   position: fixed;
-  inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto;
+  inset: auto auto max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
   z-index: 120;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: max-content;
   margin: 0;
   gap: 0.72rem;
@@ -2543,7 +2543,7 @@ blockquote {
   }
 
   .floating-actions {
-    inset: auto max(0.9rem, env(safe-area-inset-right)) max(0.9rem, env(safe-area-inset-bottom)) auto;
+    inset: auto auto max(0.9rem, env(safe-area-inset-bottom)) max(0.9rem, env(safe-area-inset-left));
   }
 
   .floating-icon-button {
