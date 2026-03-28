@@ -1974,15 +1974,18 @@ blockquote {
 
 .floating-actions {
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 48;
-  display: grid;
-  justify-items: end;
+  inset: auto max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) auto;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: max-content;
+  margin: 0;
   gap: 0.72rem;
   opacity: 0;
   transform: translate3d(0, 18px, 0);
   pointer-events: none;
+  isolation: isolate;
   transition: opacity 220ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1993,6 +1996,7 @@ blockquote {
 }
 
 .floating-icon-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2001,6 +2005,7 @@ blockquote {
   border-radius: 999px;
   border: 1px solid rgba(255, 242, 214, 0.24);
   box-shadow: 0 18px 36px rgba(35, 21, 11, 0.18);
+  pointer-events: auto;
   transition: transform 180ms ease, box-shadow 180ms ease,
     background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
@@ -2538,8 +2543,7 @@ blockquote {
   }
 
   .floating-actions {
-    right: max(0.9rem, env(safe-area-inset-right));
-    bottom: max(0.9rem, env(safe-area-inset-bottom));
+    inset: auto max(0.9rem, env(safe-area-inset-right)) max(0.9rem, env(safe-area-inset-bottom)) auto;
   }
 
   .floating-icon-button {
