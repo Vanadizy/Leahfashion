@@ -231,13 +231,15 @@ h1 {
   justify-content: space-between;
   padding: 0.82rem 0.9rem;
   border-radius: 18px;
+  border: 1px solid rgba(212, 169, 90, 0.08);
+  background: rgba(255, 250, 243, 0.34);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink);
   transition: background-color 180ms ease, color 180ms ease,
-    transform 180ms ease;
+    transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .site-nav.is-open {
@@ -265,6 +267,8 @@ h1 {
 }
 
 .site-header.is-landing .site-nav a {
+  border-color: transparent;
+  background: transparent;
   color: #fff9f1;
 }
 
@@ -469,38 +473,45 @@ h1 {
 }
 
 .hero-link-action {
-  padding: 0;
-  border: 0;
-  background: none;
+  min-height: 46px;
+  padding: 0.74rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(243, 213, 148, 0.28);
+  background: rgba(15, 10, 5, 0.22);
   color: #f3d594;
   font-size: 0.84rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-  transition: transform 180ms ease, color 180ms ease, opacity 180ms ease;
+  box-shadow: 0 14px 28px rgba(11, 8, 5, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 180ms ease, color 180ms ease, opacity 180ms ease,
+    background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .hero-link-action:hover,
 .hero-link-action:focus-visible {
   transform: translateY(-2px);
   color: #fff4cf;
+  background: rgba(243, 213, 148, 0.12);
+  border-color: rgba(243, 213, 148, 0.42);
 }
 
 .hero-contact-button {
   min-width: 152px;
-  padding: 0.88rem 1.3rem;
+  min-height: 48px;
+  padding: 0.9rem 1.35rem;
   border-radius: 999px;
-  border: 1px solid rgba(243, 213, 148, 0.32);
-  background: rgba(243, 213, 148, 0.1);
-  color: #f3d594;
+  border: 1px solid rgba(243, 213, 148, 0.52);
+  background: linear-gradient(135deg, rgba(245, 214, 152, 0.92), rgba(212, 169, 90, 0.96));
+  color: #2b1a0a;
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow: 0 18px 34px rgba(11, 8, 5, 0.16);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 36px rgba(212, 169, 90, 0.3);
   transition: transform 180ms ease, box-shadow 180ms ease,
     background-color 180ms ease, border-color 180ms ease;
 }
@@ -508,10 +519,10 @@ h1 {
 .hero-contact-button:hover,
 .hero-contact-button:focus-visible {
   transform: translateY(-2px);
-  background: rgba(243, 213, 148, 0.16);
-  border-color: rgba(243, 213, 148, 0.44);
-  color: #fff4cf;
-  box-shadow: 0 18px 36px rgba(11, 8, 5, 0.22);
+  background: linear-gradient(135deg, rgba(249, 225, 176, 0.98), rgba(224, 182, 102, 1));
+  border-color: rgba(255, 235, 186, 0.62);
+  color: #201206;
+  box-shadow: 0 20px 40px rgba(212, 169, 90, 0.34);
 }
 
 .primary-button {
@@ -1202,18 +1213,19 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
-  padding: 0.84rem 1.05rem;
+  min-height: 46px;
+  padding: 0.88rem 1.12rem;
   border-radius: 999px;
-  border: 1px solid rgba(212, 169, 90, 0.18);
-  background: rgba(212, 169, 90, 0.1);
+  border: 1px solid rgba(212, 169, 90, 0.3);
+  background: linear-gradient(135deg, rgba(245, 236, 225, 0.98), rgba(235, 216, 191, 0.94));
   color: var(--accent-deep);
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  box-shadow: 0 12px 26px rgba(35, 21, 11, 0.12);
   transition: transform 180ms ease, box-shadow 180ms ease,
-    background-color 180ms ease;
+    background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .card-link:hover,
@@ -1221,8 +1233,10 @@ section[id] {
 .section-button:hover,
 .section-button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(35, 21, 11, 0.1);
-  background: rgba(212, 169, 90, 0.16);
+  box-shadow: 0 16px 30px rgba(35, 21, 11, 0.16);
+  background: linear-gradient(135deg, rgba(247, 241, 232, 1), rgba(239, 222, 198, 0.98));
+  border-color: rgba(212, 169, 90, 0.42);
+  color: #7b5320;
 }
 
 .carousel-dots {
@@ -1719,21 +1733,37 @@ blockquote {
 
 .action-link {
   justify-content: flex-start;
-  padding: 0.88rem 1rem;
+  min-height: 48px;
+  padding: 0.92rem 1rem;
   border-radius: 22px;
-  background: rgba(212, 169, 90, 0.1);
-  border: 1px solid rgba(212, 169, 90, 0.18);
+  background: linear-gradient(135deg, rgba(245, 236, 225, 0.98), rgba(235, 216, 191, 0.94));
+  border: 1px solid rgba(212, 169, 90, 0.28);
   color: var(--accent-deep);
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(35, 21, 11, 0.08);
 }
 
 .contact-actions .action-link {
-  background: rgba(241, 226, 211, 0.14);
-  border-color: rgba(243, 213, 148, 0.18);
+  background: linear-gradient(135deg, rgba(255, 249, 239, 0.18), rgba(243, 213, 148, 0.14));
+  border-color: rgba(243, 213, 148, 0.3);
   color: #fff8ee;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.action-link:hover,
+.action-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(212, 169, 90, 0.44);
+  box-shadow: 0 14px 28px rgba(35, 21, 11, 0.14);
+}
+
+.contact-actions .action-link:hover,
+.contact-actions .action-link:focus-visible {
+  background: linear-gradient(135deg, rgba(255, 249, 239, 0.24), rgba(243, 213, 148, 0.2));
+  border-color: rgba(243, 213, 148, 0.42);
 }
 
 .site-footer {
@@ -2148,6 +2178,21 @@ blockquote {
   pointer-events: auto;
   transition: transform 180ms ease, box-shadow 180ms ease,
     background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.hero-link-action:focus-visible,
+.hero-contact-button:focus-visible,
+.card-link:focus-visible,
+.section-button:focus-visible,
+.action-link:focus-visible,
+.site-nav a:focus-visible,
+.footer-nav a:focus-visible,
+.floating-icon-button:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 0;
+  box-shadow:
+    0 0 0 3px rgba(255, 248, 231, 0.86),
+    0 0 0 6px rgba(212, 169, 90, 0.34);
 }
 
 .floating-icon-button:hover,
