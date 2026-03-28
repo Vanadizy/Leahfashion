@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leah Fashion | Bridal & Wedding Couture</title>
+    <meta
+      name="description"
+      content="Leah Fashion creates joyful bridal and occasion wear with a refined, elegant experience from fitting to final reveal."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Leah Fashion" />
+    <meta property="og:title" content="Leah Fashion | Bridal & Wedding Couture" />
+    <meta
+      property="og:description"
+      content="Leah Fashion creates joyful bridal and occasion wear with a refined, elegant experience from fitting to final reveal."
+    />
+    <meta property="og:image" content="assets/images/leah.jpeg" />
+    <meta property="og:image:alt" content="Leah Fashion founder portrait" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Leah Fashion | Bridal & Wedding Couture" />
+    <meta
+      name="twitter:description"
+      content="Leah Fashion creates joyful bridal and occasion wear with a refined, elegant experience from fitting to final reveal."
+    />
+    <meta name="twitter:image" content="assets/images/leah.jpeg" />
+    <link rel="icon" type="image/png" href="assets/images/brand/leah-fashion-logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/brand/leah-fashion-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header is-landing">
+        <div class="container header-row">
+          <a class="brand" href="#landing" aria-label="Leah Fashion home">
+            <img
+              id="brand-logo"
+              src="assets/images/brand/leah-fashion-logo.png"
+              alt="Leah Fashion logo"
+            />
+            <div class="brand-copy">
+              <span class="brand-name" id="brand-name">Leah Fashion</span>
+              <span class="brand-tagline" id="brand-tagline"
+                >Wedding couture studio</span
+              >
+            </div>
+          </a>
+
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle-box" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span class="visually-hidden">Menu</span>
+          </button>
+
+          <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="#why-us">Why Us</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section" id="landing">
+          <div class="hero-backdrop" id="hero-backdrop"></div>
+          <div class="hero-overlay"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="section-tag" id="hero-eyebrow"></p>
+              <h1 id="hero-title"></h1>
+              <p class="hero-description" id="hero-text"></p>
+              <div class="hero-actions">
+                <a class="hero-link-action" id="hero-button" href="#about"
+                  >Read More</a
+                >
+                <a class="hero-contact-button" id="hero-contact-button" href="#contact"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section why-section" id="why-us">
+          <div class="container">
+            <div class="why-layout">
+              <div class="section-heading why-heading-card">
+                <p class="section-tag">Why Choose Leah Fashion</p>
+                <h2 id="why-title"></h2>
+                <p id="why-intro"></p>
+              </div>
+              <div class="why-grid" id="why-pillars"></div>
+            </div>
+
+            <div class="awards-shell">
+              <div class="awards-heading">
+                <p class="section-tag">Achieved Awards</p>
+                <h3 id="awards-title"></h3>
+                <p class="awards-note">
+                  Recognition earned through careful fittings, bridal finishing, and a client
+                  experience that stays calm from consultation to final reveal.
+                </p>
+              </div>
+              <div class="awards-carousel" id="awards-carousel">
+                <div class="awards-viewport">
+                  <div class="awards-list" id="awards-list"></div>
+                </div>
+                <div class="awards-controls" aria-label="Awards navigation">
+                  <button
+                    class="award-slide-button"
+                    id="award-prev"
+                    type="button"
+                    aria-label="Previous award"
+                  >
+                    <span aria-hidden="true">&#8592;</span>
+                  </button>
+                  <p class="award-progress" id="award-progress">01 / 06</p>
+                  <button
+                    class="award-slide-button"
+                    id="award-next"
+                    type="button"
+                    aria-label="Next award"
+                  >
+                    <span aria-hidden="true">&#8594;</span>
+                  </button>
+                </div>
+                <div class="carousel-dots" id="awards-dots" aria-label="Awards slides"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section catalog-section" id="catalog">
+          <div class="container">
+            <div class="section-heading split-heading">
+              <div>
+                <p class="section-tag">Catalog</p>
+                <h2 id="catalog-title"></h2>
+              </div>
+              <p id="catalog-intro"></p>
+            </div>
+            <div class="catalog-grid" id="catalog-grid"></div>
+            <div class="carousel-dots" id="catalog-dots" aria-label="Catalog slides"></div>
+            <div class="section-cta">
+              <a class="secondary-button section-button" href="catalog.html"
+                >Open Catalog Page</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section gallery-section" id="gallery">
+          <div class="container">
+            <div class="section-heading split-heading">
+              <div>
+                <p class="section-tag">Gallery</p>
+                <h2 id="gallery-title"></h2>
+              </div>
+              <p id="gallery-intro"></p>
+            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
+            <div class="carousel-dots" id="gallery-dots" aria-label="Gallery slides"></div>
+            <div class="section-cta">
+              <a class="secondary-button section-button" href="gallery.html"
+                >Open Gallery Page</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section about-section" id="about">
+          <div class="container about-grid">
+            <div class="about-card statement-card">
+              <p class="section-tag">About Leah Fashion</p>
+              <h2 id="about-title"></h2>
+              <p id="about-story"></p>
+              <blockquote id="about-quote"></blockquote>
+            </div>
+
+            <div class="about-card">
+              <p class="mini-label">Studio Principles</p>
+              <div class="value-list" id="values-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section contact-section" id="contact">
+          <div class="container">
+            <div class="section-heading">
+              <p class="section-tag">Contact</p>
+              <h2 id="contact-title"></h2>
+              <p id="contact-intro"></p>
+            </div>
+
+            <div class="contact-layout">
+              <div class="contact-panel" id="contact-cards"></div>
+              <div class="contact-panel contact-actions">
+                <p class="mini-label">Direct Actions</p>
+                <div class="action-list">
+                  <a class="action-link" id="contact-call-link" href="#">Call Studio</a>
+                  <a class="action-link" id="contact-email-link" href="#">Send Email</a>
+                  <a class="action-link" id="contact-whatsapp-link" href="#"
+                    >Chat on WhatsApp</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="location-shell">
+              <div class="location-panel">
+                <p class="mini-label">Studio Location</p>
+                <h3 id="location-title"></h3>
+                <p id="location-summary"></p>
+                <div class="location-meta">
+                  <div class="location-meta-item">
+                    <strong>Address</strong>
+                    <span id="location-address"></span>
+                  </div>
+                  <div class="location-meta-item">
+                    <strong>Working Hours</strong>
+                    <span id="location-hours"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="location-map-card">
+                <iframe
+                  id="location-map"
+                  title="Leah Fashion studio map"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="about:blank"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-shell">
+          <div class="footer-brand-block">
+            <div class="footer-brand-row">
+              <img
+                class="footer-logo"
+                id="footer-logo"
+                src="assets/images/brand/leah-fashion-logo.png"
+                alt="Leah Fashion logo"
+              />
+              <div>
+                <span class="brand-name footer-brand" id="footer-brand"
+                  >Leah Fashion</span
+                >
+                <p class="footer-note" id="footer-note"></p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer">
+            <a href="#landing">Home</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="footer-social">
+            <p class="mini-label">Follow Leah Fashion</p>
+            <div class="footer-links">
+              <a
+                id="instagram-link"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm9.6 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 6.8A5.2 5.2 0 1 1 6.8 12 5.2 5.2 0 0 1 12 6.8Zm0 1.8A3.4 3.4 0 1 0 15.4 12 3.4 3.4 0 0 0 12 8.6Z"
+                  ></path>
+                </svg>
+                <span class="visually-hidden">Instagram</span>
+              </a>
+              <a
+                id="facebook-link"
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13.35 22v-8.2h2.76l.41-3.2h-3.17V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14A22.2 22.2 0 0 0 14.17 4c-2.45 0-4.12 1.5-4.12 4.25v2.35H7.3v3.2h2.75V22h3.3Z"
+                  ></path>
+                </svg>
+                <span class="visually-hidden">Facebook</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="floating-actions" id="floating-actions">
+      <a
+        class="floating-icon-button floating-icon-button--whatsapp"
+        id="floating-whatsapp"
+        href="#"
+        aria-label="Chat with Leah Fashion on WhatsApp"
+        title="WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.52 3.48A11.88 11.88 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.16 1.6 5.98L0 24l6.28-1.64a11.86 11.86 0 0 0 5.78 1.48h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.45-8.46Zm-8.46 18.35h-.01a9.88 9.88 0 0 1-5.03-1.38l-.36-.21-3.73.98.99-3.63-.24-.37A9.86 9.86 0 0 1 2.16 11.9c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7.01 2.9 9.84 9.84 0 0 1 2.89 7c0 5.46-4.44 9.91-9.9 9.91Zm5.43-7.42c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.51a8.94 8.94 0 0 1-1.66-2.06c-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.68-1.63-.93-2.24-.25-.6-.5-.52-.68-.53h-.58c-.2 0-.52.08-.8.37-.28.3-1.05 1.03-1.05 2.5 0 1.48 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.13 4.54.72.31 1.28.49 1.72.63.72.23 1.37.2 1.88.12.57-.08 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.07-.12-.27-.2-.57-.35Z"
+          ></path>
+        </svg>
+        <span class="visually-hidden">WhatsApp</span>
+      </a>
+
+      <button
+        class="floating-icon-button back-to-top"
+        id="back-to-top"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <span aria-hidden="true">&#8593;</span>
+      </button>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

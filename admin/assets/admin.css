@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --canvas: #f7f0e6;
+  --surface: #fffaf2;
+  --ink: #22140a;
+  --muted: #78624a;
+  --accent: #cfa254;
+  --line: rgba(34, 20, 10, 0.12);
+  --heading-font: "Bodoni Moda", Georgia, serif;
+  --body-font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--body-font);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(207, 162, 84, 0.16), transparent 24%),
+    linear-gradient(180deg, #fffaf2 0%, var(--canvas) 100%);
+}
+
+.admin-shell {
+  width: min(1100px, calc(100% - 1.5rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.auth-panel,
+.editor-panel {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: rgba(255, 250, 242, 0.9);
+  box-shadow: 0 18px 60px rgba(34, 20, 10, 0.1);
+}
+
+.auth-panel {
+  width: min(460px, 100%);
+  margin: 8vh auto 0;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--accent);
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.muted {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.stack,
+.editor-label {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.3rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input,
+textarea,
+button,
+.secondary-button {
+  font: inherit;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 0.45rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(34, 20, 10, 0.15);
+  border-radius: 18px;
+  background: #fffdf9;
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 65vh;
+  resize: vertical;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ebc983 0%, var(--accent) 100%);
+  color: #23150b;
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--line);
+}
+
+.editor-header,
+.header-actions,
+.editor-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.editor-header {
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 1.25rem;
+}
+
+.header-actions,
+.editor-actions {
+  flex-wrap: wrap;
+}
+
+.editor-actions {
+  margin-bottom: 1rem;
+}
+
+.status {
+  min-height: 1.2rem;
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.status.is-error {
+  color: #8d2d1d;
+}
+
+.status.is-success {
+  color: #276341;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .admin-shell {
+    width: calc(100% - 1rem);
+  }
+
+  .editor-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  textarea {
+    min-height: 58vh;
+  }
+}

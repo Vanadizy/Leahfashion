@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="180" y1="80" x2="1420" y2="1120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3E2717"/>
+      <stop offset="0.52" stop-color="#22130B"/>
+      <stop offset="1" stop-color="#120A05"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 180) rotate(120) scale(420 520)">
+      <stop stop-color="#F4DAA5" stop-opacity=".9"/>
+      <stop offset=".7" stop-color="#D2A55A" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#D2A55A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="390" y1="1020" x2="1180" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B37A2E" stop-opacity=".08"/>
+      <stop offset=".5" stop-color="#F6D99D" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#F6D99D" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <circle cx="1180" cy="180" r="460" fill="url(#glow)"/>
+  <ellipse cx="230" cy="1040" rx="460" ry="230" fill="#FFF4D8" fill-opacity=".08"/>
+  <path d="M870 150c140 0 290 54 382 141 105 99 161 226 161 376 0 223-124 402-305 466-71 24-151 37-238 37-354 0-641-217-641-485 0-164 99-308 251-402C592 194 722 150 870 150Z" stroke="#F1D093" stroke-opacity=".48" stroke-width="2"/>
+  <path d="M482 1027c144-100 273-157 388-171 128-16 284 15 468 91" stroke="url(#wave)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M432 1092c175-116 344-171 507-165 134 5 272 50 413 135" stroke="#F6D99D" stroke-opacity=".3" stroke-width="2" stroke-linecap="round"/>
+  <path d="M956 302c-31 168-9 350 66 546 25 66 32 118 22 155" stroke="#F7E5BF" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M1003 339c41 130 117 252 229 365" stroke="#DFAE61" stroke-opacity=".34" stroke-width="2" stroke-linecap="round"/>
+  <path d="M674 977c129-231 194-418 194-561 0-58-8-116-25-172" stroke="#EFC67D" stroke-opacity=".42" stroke-width="2" stroke-linecap="round"/>
+</svg>
