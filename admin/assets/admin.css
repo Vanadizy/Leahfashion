@@ -5,12 +5,12 @@
 }
 
 :root {
-  --canvas: #f7f0e6;
-  --surface: #fffaf2;
-  --ink: #22140a;
-  --muted: #78624a;
+  --canvas: #f6eee4;
+  --surface: #f1e2d3;
+  --ink: #4b3423;
+  --muted: #6f5947;
   --accent: #cfa254;
-  --line: rgba(34, 20, 10, 0.12);
+  --line: rgba(75, 52, 35, 0.12);
   --heading-font: "Bodoni Moda", Georgia, serif;
   --body-font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   color-scheme: light;
@@ -23,7 +23,7 @@ body {
   color: var(--ink);
   background:
     radial-gradient(circle at top right, rgba(207, 162, 84, 0.16), transparent 24%),
-    linear-gradient(180deg, #fffaf2 0%, var(--canvas) 100%);
+    linear-gradient(180deg, #f9f1e8 0%, var(--canvas) 100%);
 }
 
 .admin-shell {

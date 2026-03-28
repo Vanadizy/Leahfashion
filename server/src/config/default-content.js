@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     accent: "#d4a95a",
     accentDeep: "#93672e",
-    canvas: "#fbf5ec",
-    surface: "#fffaf2",
-    ink: "#23150b",
-    muted: "#75634d"
+    canvas: "#f6eee4",
+    surface: "#f1e2d3",
+    ink: "#4b3423",
+    muted: "#6f5947"
   },
   brand: {
     name: "Leah Fashion",

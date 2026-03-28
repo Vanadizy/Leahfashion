@@ -5,6 +5,15 @@ const FONT_OPTIONS = {
   "Plus Jakarta Sans": '"Plus Jakarta Sans", "Segoe UI", sans-serif'
 };
 
+const LEGACY_THEME = {
+  accent: "#d4a95a",
+  accentDeep: "#93672e",
+  canvas: "#fbf5ec",
+  surface: "#fffaf2",
+  ink: "#23150b",
+  muted: "#75634d"
+};
+
 const AWARD_IMAGE_FALLBACKS = [
   {
     image: "assets/images/fitting.jpeg",
@@ -36,10 +45,10 @@ const defaultContent = {
   theme: {
     accent: "#d4a95a",
     accentDeep: "#93672e",
-    canvas: "#fbf5ec",
-    surface: "#fffaf2",
-    ink: "#23150b",
-    muted: "#75634d"
+    canvas: "#f6eee4",
+    surface: "#f1e2d3",
+    ink: "#4b3423",
+    muted: "#6f5947"
   },
   brand: {
     name: "Leah Fashion",
@@ -1042,6 +1051,10 @@ async function loadContent() {
     const payload = await response.json();
     const merged = mergeWithDefaults(defaultContent, payload.content || {});
 
+    if (isLegacyTheme(merged.theme)) {
+      merged.theme = { ...defaultContent.theme };
+    }
+
     merged.brand.headingFont = defaultContent.brand.headingFont;
     merged.brand.bodyFont = defaultContent.brand.bodyFont;
 
@@ -1241,6 +1254,18 @@ async function loadContent() {
   } catch (error) {
     return clone(defaultContent);
   }
+}
+
+function isLegacyTheme(theme) {
+  return (
+    theme &&
+    theme.accent === LEGACY_THEME.accent &&
+    theme.accentDeep === LEGACY_THEME.accentDeep &&
+    theme.canvas === LEGACY_THEME.canvas &&
+    theme.surface === LEGACY_THEME.surface &&
+    theme.ink === LEGACY_THEME.ink &&
+    theme.muted === LEGACY_THEME.muted
+  );
 }
 
 function renderCards(node, items, template) {

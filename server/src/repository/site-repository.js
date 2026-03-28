@@ -3,6 +3,15 @@
 const defaultContent = require("../config/default-content");
 const { getPool } = require("../db");
 
+const LEGACY_THEME = {
+  accent: "#d4a95a",
+  accentDeep: "#93672e",
+  canvas: "#fbf5ec",
+  surface: "#fffaf2",
+  ink: "#23150b",
+  muted: "#75634d"
+};
+
 async function getSiteContent() {
   const [rows] = await getPool().execute(
     "SELECT content FROM site_content WHERE slug = ? LIMIT 1",
@@ -40,6 +49,10 @@ async function findAdminByUsername(username) {
 
 function normalizeSiteContent(content) {
   const merged = mergeWithDefaults(defaultContent, content || {});
+
+  if (isLegacyTheme(merged.theme)) {
+    merged.theme = clone(defaultContent.theme);
+  }
 
   merged.brand.headingFont = defaultContent.brand.headingFont;
   merged.brand.bodyFont = defaultContent.brand.bodyFont;
@@ -238,6 +251,18 @@ function normalizeSiteContent(content) {
   }
 
   return merged;
+}
+
+function isLegacyTheme(theme) {
+  return (
+    theme &&
+    theme.accent === LEGACY_THEME.accent &&
+    theme.accentDeep === LEGACY_THEME.accentDeep &&
+    theme.canvas === LEGACY_THEME.canvas &&
+    theme.surface === LEGACY_THEME.surface &&
+    theme.ink === LEGACY_THEME.ink &&
+    theme.muted === LEGACY_THEME.muted
+  );
 }
 
 function mergeWithDefaults(defaultValue, storedValue) {
