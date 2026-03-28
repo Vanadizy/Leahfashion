@@ -229,7 +229,9 @@ function normalizeSiteContent(content) {
 
   if (
     !merged.contact.intro ||
-    merged.contact.intro === "Invite clients to call, email, or chat directly with the Leah Fashion studio."
+    merged.contact.intro === "Invite clients to call, email, or chat directly with the Leah Fashion studio." ||
+    merged.contact.intro ===
+      "Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza."
   ) {
     merged.contact.intro = defaultContent.contact.intro;
   }

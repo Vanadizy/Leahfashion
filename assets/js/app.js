@@ -224,7 +224,7 @@ const defaultContent = {
   },
   contact: {
     title: "Plan a fitting or ask about a custom design",
-    intro: "Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza.",
+    intro: "Send a bridal inquiry form, request directions, or use the direct contact actions for Leah Fashion in Busweru, Mwanza.",
     cards: [
       {
         title: "Calls & WhatsApp",
@@ -330,6 +330,11 @@ function attachEvents() {
   if (backToTopButton) {
     backToTopButton.addEventListener("click", scrollToTop);
   }
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm && !contactForm.dataset.bound) {
+    contactForm.addEventListener("submit", submitContactForm);
+    contactForm.dataset.bound = "true";
+  }
   syncHeaderState();
   syncFloatingActions();
   requestAnimationFrame(() => {
@@ -344,6 +349,46 @@ function handleViewportEffects() {
   syncHeaderState();
   syncHeroMotion();
   syncFloatingActions();
+}
+
+function submitContactForm(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const status = document.getElementById("contact-form-status");
+  const formData = new FormData(form);
+  const name = sanitizeLinkValue(formData.get("name"));
+  const phone = sanitizeLinkValue(formData.get("phone"));
+  const email = sanitizeLinkValue(formData.get("email"));
+  const service = sanitizeLinkValue(formData.get("service"));
+  const message = sanitizeLinkValue(formData.get("message"));
+  const destination = sanitizeLinkValue(siteContent.contact.email) || defaultContent.contact.email;
+
+  if (!name || !phone || !email || !service || !message) {
+    if (status) {
+      status.textContent = "Complete all fields before sending the inquiry.";
+    }
+    return;
+  }
+
+  const subject = encodeURIComponent(`Leah Fashion Inquiry | ${name} | ${service}`);
+  const body = encodeURIComponent(
+    [
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Service: ${service}`,
+      "",
+      "Inquiry message:",
+      message
+    ].join("\n")
+  );
+
+  if (status) {
+    status.textContent = "Opening your email app with the inquiry prepared for Leah Fashion.";
+  }
+
+  window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
 }
 
 function toggleNav(event) {
@@ -568,9 +613,12 @@ function renderSite() {
 
   setText("contact-title", siteContent.contact.title);
   setText("contact-intro", siteContent.contact.intro);
+  const visibleContactCards = (siteContent.contact.cards || []).filter(
+    (item) => !isPrimaryContactCard(item)
+  );
   renderCards(
     document.getElementById("contact-cards"),
-    siteContent.contact.cards,
+    visibleContactCards,
     (item) => `
       <div class="contact-card">
         <h3>${escapeHtml(item.title)}</h3>
@@ -579,24 +627,51 @@ function renderSite() {
     `
   );
 
-  setText("location-title", siteContent.contact.locationTitle || siteContent.contact.cards[2].text);
+  const locationCardText = getContactCardText(
+    siteContent.contact.cards,
+    ["location"],
+    defaultContent.contact.cards[2].text
+  );
+  const hoursCardText = getContactCardText(
+    siteContent.contact.cards,
+    ["studio hours", "working hours", "hours"],
+    defaultContent.contact.cards[3].text
+  );
+
+  setText("location-title", siteContent.contact.locationTitle || locationCardText);
   setText("location-summary", siteContent.contact.locationSummary);
-  setText("location-address", siteContent.contact.cards[2].text);
-  setText("location-hours", siteContent.contact.cards[3].text);
+  setText("location-address", locationCardText);
+  setText("location-hours", hoursCardText);
+  setText("contact-form-email", siteContent.contact.email);
 
   const locationMap = document.getElementById("location-map");
   if (locationMap) {
     locationMap.src = siteContent.contact.mapEmbed || defaultContent.contact.mapEmbed;
   }
 
+  const contactMessageInput = document.getElementById("contact-message-input");
+  if (
+    contactMessageInput &&
+    (!sanitizeLinkValue(contactMessageInput.value) ||
+      sanitizeLinkValue(contactMessageInput.value) ===
+        "Hello Leah Fashion,\n\nI found you on the website and I would like to ask about my bridal design / fitting request.\n\nEvent date:\nPreferred style:\nMore details:")
+  ) {
+    contactMessageInput.value = getDefaultInquiryMessage();
+  }
+
   const callLink = document.getElementById("contact-call-link");
   callLink.href = `tel:${sanitizeLinkValue(siteContent.contact.call)}`;
 
   const emailLink = document.getElementById("contact-email-link");
-  emailLink.href = `mailto:${sanitizeLinkValue(siteContent.contact.email)}`;
+  emailLink.href = `mailto:${sanitizeLinkValue(siteContent.contact.email)}?subject=${encodeURIComponent(
+    "Leah Fashion Inquiry"
+  )}&body=${encodeURIComponent(getDefaultInquiryMessage())}`;
 
   const whatsappLink = document.getElementById("contact-whatsapp-link");
-  whatsappLink.href = `https://wa.me/${digitsOnly(siteContent.contact.whatsapp)}`;
+  whatsappLink.href = buildWhatsappUrl(
+    siteContent.contact.whatsapp,
+    getDefaultInquiryMessage()
+  );
   whatsappLink.target = "_blank";
   whatsappLink.rel = "noreferrer";
 
@@ -610,7 +685,10 @@ function renderSite() {
   }
 
   const floatingWhatsapp = document.getElementById("floating-whatsapp");
-  floatingWhatsapp.href = `https://wa.me/${digitsOnly(siteContent.contact.whatsapp)}`;
+  floatingWhatsapp.href = buildWhatsappUrl(
+    siteContent.contact.whatsapp,
+    getDefaultInquiryMessage()
+  );
   floatingWhatsapp.target = "_blank";
   floatingWhatsapp.rel = "noreferrer";
 
@@ -881,9 +959,65 @@ function setupMobileScrollers() {
     );
 
     state.track.dataset.mobileCarouselBound = "true";
+    setupManualScrollerDrag(state);
   });
 
   syncMobileScrollers();
+}
+
+function setupManualScrollerDrag(state) {
+  if (!state.track || state.track.dataset.manualDragBound) {
+    return;
+  }
+
+  let isDragging = false;
+  let pointerId = null;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  state.track.addEventListener("pointerdown", (event) => {
+    if (event.pointerType !== "mouse" || event.button !== 0) {
+      return;
+    }
+
+    isDragging = true;
+    pointerId = event.pointerId;
+    startX = event.clientX;
+    startScrollLeft = state.track.scrollLeft;
+    state.track.classList.add("is-dragging");
+    pauseMobileScroller(state);
+    state.track.setPointerCapture?.(pointerId);
+    event.preventDefault();
+  });
+
+  state.track.addEventListener("pointermove", (event) => {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    const deltaX = event.clientX - startX;
+    state.track.scrollLeft = startScrollLeft - deltaX;
+    event.preventDefault();
+  });
+
+  const stopDrag = (event) => {
+    if (!isDragging || (event.pointerId !== undefined && event.pointerId !== pointerId)) {
+      return;
+    }
+
+    isDragging = false;
+    state.track.classList.remove("is-dragging");
+    if (pointerId !== null) {
+      state.track.releasePointerCapture?.(pointerId);
+    }
+    pointerId = null;
+  };
+
+  state.track.addEventListener("pointerup", stopDrag);
+  state.track.addEventListener("pointercancel", stopDrag);
+  state.track.addEventListener("pointerleave", stopDrag);
+
+  state.track.dataset.manualDragBound = "true";
 }
 
 function syncMobileScrollers() {
@@ -986,6 +1120,24 @@ function stopMobileScrollerAutoplay(state) {
 
 function pauseMobileScroller(state) {
   state.pauseUntil = Date.now() + 6500;
+}
+
+function getDefaultInquiryMessage() {
+  return [
+    `Hello ${siteContent.brand.name},`,
+    "",
+    "I found you on the website and I would like to ask about my bridal design / fitting request.",
+    "",
+    "Event date:",
+    "Preferred style:",
+    "More details:"
+  ].join("\n");
+}
+
+function buildWhatsappUrl(number, message) {
+  const digits = digitsOnly(number);
+  const text = sanitizeLinkValue(message);
+  return text ? `https://wa.me/${digits}?text=${encodeURIComponent(text)}` : `https://wa.me/${digits}`;
 }
 
 function renderCarouselDots(container, total, activeIndex, onSelect) {
@@ -1234,7 +1386,9 @@ async function loadContent() {
 
     if (
       !merged.contact.intro ||
-      merged.contact.intro === "Invite clients to call, email, or chat directly with the Leah Fashion studio."
+      merged.contact.intro === "Invite clients to call, email, or chat directly with the Leah Fashion studio." ||
+      merged.contact.intro ===
+        "Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza."
     ) {
       merged.contact.intro = defaultContent.contact.intro;
     }
@@ -1470,6 +1624,20 @@ function getAwardAlt(item, index) {
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
+}
+
+function isPrimaryContactCard(item) {
+  const title = String(item?.title || "").toLowerCase();
+  return title.includes("phone") || title.includes("call") || title.includes("whatsapp");
+}
+
+function getContactCardText(cards, aliases, fallback) {
+  const match = (cards || []).find((item) => {
+    const title = String(item?.title || "").toLowerCase();
+    return aliases.some((alias) => title.includes(alias));
+  });
+
+  return sanitizeLinkValue(match?.text) || fallback;
 }
 
 function sanitizeLinkValue(value) {

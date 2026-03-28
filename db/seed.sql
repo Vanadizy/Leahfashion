@@ -3,10 +3,11 @@ USE leah_fashion;
 INSERT INTO admins (username, password_hash, full_name)
 VALUES (
   'admin',
-  '$2a$10$VCaGDSDQbCPzbDmCqxYVX.Pbd3NmCv4U/u3nmjxFuv1trIouBvcq6',
+  '$2a$10$yKunQkybfVsc/WNVhuzSgeW.HA4OWh8pMyFrcGX2f4.ozrvRYpQj.',
   'Leah Fashion Admin'
 )
 ON DUPLICATE KEY UPDATE
+  password_hash = VALUES(password_hash),
   full_name = VALUES(full_name);
 
 INSERT INTO site_content (slug, content)
@@ -119,7 +120,7 @@ VALUES (
     ),
     'contact', JSON_OBJECT(
       'title', 'Plan a fitting or ask about a custom design',
-      'intro', 'Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza.',
+      'intro', 'Send a bridal inquiry form, request directions, or use the direct contact actions for Leah Fashion in Busweru, Mwanza.',
       'cards', JSON_ARRAY(
         JSON_OBJECT('title', 'Calls & WhatsApp', 'text', '+255 769 727 070'),
         JSON_OBJECT('title', 'Email', 'text', 'hello@leahfashion.com'),

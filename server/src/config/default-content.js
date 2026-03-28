@@ -183,7 +183,7 @@ module.exports = {
   },
   contact: {
     title: "Plan a fitting or ask about a custom design",
-    intro: "Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza.",
+    intro: "Send a bridal inquiry form, request directions, or use the direct contact actions for Leah Fashion in Busweru, Mwanza.",
     cards: [
       {
         title: "Calls & WhatsApp",

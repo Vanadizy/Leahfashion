@@ -212,6 +212,68 @@
 
             <div class="contact-layout">
               <div class="contact-panel" id="contact-cards"></div>
+              <div class="contact-panel contact-form-panel">
+                <p class="mini-label">Inquiry Form</p>
+                <h3>Send a bridal request to Leah Fashion</h3>
+                <p class="contact-form-intro">
+                  Fill this form and prepare your inquiry for
+                  <strong id="contact-form-email">hello@leahfashion.com</strong>. It is arranged
+                  for Leah Fashion email integration so appointments, gown requests, and fitting
+                  questions can be followed up clearly.
+                </p>
+
+                <form class="contact-form" id="contact-form">
+                  <div class="contact-form-grid">
+                    <label class="form-field">
+                      Full Name
+                      <input id="contact-name" name="name" type="text" required />
+                    </label>
+                    <label class="form-field">
+                      Phone Number
+                      <input id="contact-phone" name="phone" type="tel" required />
+                    </label>
+                    <label class="form-field">
+                      Email Address
+                      <input id="contact-email-input" name="email" type="email" required />
+                    </label>
+                    <label class="form-field">
+                      Service Needed
+                      <select id="contact-service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="Wedding gown">Wedding gown</option>
+                        <option value="Reception look">Reception look</option>
+                        <option value="Custom couture">Custom couture</option>
+                        <option value="Fitting appointment">Fitting appointment</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <label class="form-field form-field--full">
+                    Message
+                    <textarea
+                      id="contact-message-input"
+                      name="message"
+                      rows="5"
+                      required
+                    >Hello Leah Fashion,
+
+I found you on the website and I would like to ask about my bridal design / fitting request.
+
+Event date:
+Preferred style:
+More details:</textarea>
+                  </label>
+
+                  <div class="contact-form-actions">
+                    <button class="section-button" type="submit">Send Inquiry</button>
+                    <p class="form-note">
+                      Submitting opens your email app with the inquiry prepared for Leah Fashion.
+                    </p>
+                  </div>
+
+                  <p class="status" id="contact-form-status" aria-live="polite"></p>
+                </form>
+              </div>
               <div class="contact-panel contact-actions">
                 <p class="mini-label">Direct Actions</p>
                 <div class="action-list">
@@ -287,6 +349,7 @@
             <a href="#catalog">Catalog</a>
             <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
+            <a href="/admin" target="_blank" rel="noreferrer">Customize</a>
           </nav>
 
           <div class="footer-social">
