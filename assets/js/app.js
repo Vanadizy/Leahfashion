@@ -793,11 +793,18 @@ function handleAwardsWheel(event) {
     return;
   }
 
-  if (Math.abs(event.deltaY) < 18 || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+  const horizontalDelta =
+    Math.abs(event.deltaX) > Math.abs(event.deltaY)
+      ? event.deltaX
+      : event.shiftKey
+        ? event.deltaY
+        : 0;
+
+  if (Math.abs(horizontalDelta) < 18) {
     return;
   }
 
-  const direction = event.deltaY > 0 ? 1 : -1;
+  const direction = horizontalDelta > 0 ? 1 : -1;
   const nextIndex = clamp(
     awardsState.currentIndex + direction,
     0,

@@ -750,6 +750,8 @@ section[id] {
   padding-bottom: 0.35rem;
   scroll-snap-type: x proximity;
   overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-y pinch-zoom;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -916,7 +918,9 @@ section[id] {
   overflow: hidden;
   border-radius: 34px;
   min-height: 100%;
-  overscroll-behavior: contain;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-y pinch-zoom;
 }
 
 .awards-list {
@@ -1070,19 +1074,15 @@ section[id] {
 
 @media (min-width: 981px) {
   .awards-carousel.is-desktop-slider .awards-viewport {
-    cursor: ew-resize;
+    cursor: default;
   }
 
   .awards-carousel.is-desktop-slider::after {
-    content: "Scroll on the card to see more awards";
+    content: "Use the arrows or swipe sideways to see more awards";
     color: var(--muted);
     font-size: 0.74rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-  }
-
-  .awards-carousel.is-desktop-slider .awards-controls {
-    display: none;
   }
 }
 
@@ -1220,6 +1220,8 @@ section[id] {
   padding-bottom: 0.35rem;
   scroll-snap-type: x proximity;
   overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  touch-action: pan-y pinch-zoom;
   -webkit-overflow-scrolling: touch;
 }
 
