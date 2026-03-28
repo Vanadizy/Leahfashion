@@ -46,7 +46,7 @@ module.exports = {
   },
   whyUs: {
     title: "Why clients trust Leah Fashion",
-    intro: "Clients choose Leah Fashion because the studio combines calm guidance, fitting accuracy, and a polished wedding finish. Every stage, from consultation to final adjustment, is explained clearly so brides and families feel relaxed, informed, and confident in the final look.",
+    intro: "Clients choose Leah Fashion because the studio combines calm guidance, fitting accuracy, and a polished wedding finish. The brand also carries visible women-led recognition from 2025 and a creative story rooted in Mwanza, giving brides confidence in both the craftsmanship and the woman behind the label.",
     pillars: [
       {
         title: "Guided Consultations",
@@ -61,53 +61,35 @@ module.exports = {
         text: "Warm communication, clear timelines, and thoughtful adjustments keep the process exciting rather than stressful, especially close to the wedding day."
       },
       {
-        title: "Recognized Craft",
-        text: "The studio's awards and client praise reflect consistent bridal workmanship, memorable styling, and a finish that photographs beautifully."
+        title: "Recognized Leadership",
+        text: "Leah Fashion connects bridal workmanship with public recognition, including the 2025 Mwanamke Kinara and Mwanamke Shupavu mentions, alongside the founder story of Cherehani Festival Tanzania beginning from Mwanza."
       }
     ],
-    awardsTitle: "Awards and recognition earned through bridal craftsmanship",
+    awardsTitle: "Awards and leadership milestones behind Leah Fashion",
     awards: [
       {
         year: "2025",
-        title: "Bridal Style Excellence",
-        text: "Recognized for polished gown finishing, fitting precision, and strong ceremony presentation.",
-        image: "assets/images/fitting.jpeg",
-        alt: "Bride wearing a fitted white wedding gown outdoors"
-      },
-      {
-        year: "2024",
-        title: "Client Choice Studio",
-        text: "Awarded for a warm client journey, dependable communication, and memorable bridal delivery.",
-        image: "assets/images/satisfied_fitting.jpeg",
-        alt: "Smiling woman wearing an orange fitted gown"
-      },
-      {
-        year: "2023",
-        title: "Creative Wedding Couture",
-        text: "Celebrated for expressive wedding styling, confident silhouettes, and event-ready couture detail.",
-        image: "assets/images/details.jpeg",
-        alt: "Woman in an embellished orange evening gown"
-      },
-      {
-        year: "2022",
-        title: "Emerging Fashion House",
-        text: "Honored for rising design quality, growing bridal demand, and refined finishing standards.",
-        image: "assets/images/designs.jpeg",
-        alt: "Woman wearing a black and gold reception dress"
-      },
-      {
-        year: "2021",
-        title: "Elegant Occasion Wear Recognition",
-        text: "Praised for reception looks and occasion pieces that balance glamour, comfort, and movement.",
+        title: "Mwanamke Kinara Awards 2025",
+        meta: "Women-led impact recognition",
+        text: "Public coverage around Mwanamke Kinara presents it as a recognition platform that highlights standout women and visible community or business impact. On this site, it marks Leah Fashion's 2025 recognition for creative leadership and brand influence from Mwanza.",
         image: "assets/images/leah.jpeg",
-        alt: "Leah Fashion owner in a tailored outfit with measuring tape"
+        alt: "Leah Fashion founder portrait used for the Mwanamke Kinara Awards card"
       },
       {
-        year: "2020",
-        title: "Fashion Craft Merit",
-        text: "Recognized for careful stitching, confident tailoring, and a clear design vision for celebration wear.",
-        image: "assets/images/fitting.jpeg",
-        alt: "Bride wearing a fitted white wedding gown outdoors"
+        year: "2025",
+        title: "Mwanamke Shupavu 2025",
+        meta: "Resilience and bold leadership",
+        text: "The site presents this 2025 award as recognition for courage, persistence, and women-led enterprise growth. Public documentation on the exact 2025 award wording is limited, so the description follows the award title you provided and the common Tanzanian use of 'mwanamke shupavu' for resilient, barrier-breaking women.",
+        image: "assets/images/details.jpeg",
+        alt: "Leah Fashion couture detail image used for the Mwanamke Shupavu award card"
+      },
+      {
+        year: "Founder",
+        title: "Cherehani Festival Tanzania",
+        meta: "Started from Mwanza",
+        text: "Leah Fashion also presents Leah as the founder of Cherehani Festival Tanzania, a creative initiative described by the brand as starting from Mwanza to celebrate fashion skill, visibility, and local design energy.",
+        image: "assets/images/designs.jpeg",
+        alt: "Leah Fashion occasion-wear image used for the Cherehani Festival Tanzania founder card"
       }
     ]
   },
@@ -201,11 +183,11 @@ module.exports = {
   },
   contact: {
     title: "Plan a fitting or ask about a custom design",
-    intro: "Invite clients to call, email, or chat directly with the Leah Fashion studio.",
+    intro: "Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza.",
     cards: [
       {
-        title: "Phone",
-        text: "+255 700 123 456"
+        title: "Calls & WhatsApp",
+        text: "+255 769 727 070"
       },
       {
         title: "Email",
@@ -213,24 +195,26 @@ module.exports = {
       },
       {
         title: "Location",
-        text: "Buswelu, Mwanza"
+        text: "Leah Fashion Busweru, Mwanza"
       },
       {
         title: "Studio Hours",
         text: "Mon - Thu | 9:00 AM - 6:00 PM, Fri | 9:00 AM - 2:00 PM, Sat - Sun | Closed"
       }
     ],
-    call: "+255700123456",
+    call: "+255769727070",
     email: "hello@leahfashion.com",
-    whatsapp: "+255700123456",
-    locationTitle: "Buswelu, Mwanza",
+    whatsapp: "+255769727070",
+    locationTitle: "Leah Fashion Busweru Mwanza",
     locationSummary:
-      "Visit Leah Fashion in Buswelu, Mwanza for bridal fittings, custom consultations, and wedding styling guidance in a calm studio setting.",
-    mapEmbed: "https://www.google.com/maps?q=Buswelu,+Mwanza&output=embed"
+      "Visit Leah Fashion Busweru Mwanza for bridal fittings, custom consultations, and wedding styling guidance in a calm studio setting, then use the directions link below to open the route directly in Google Maps.",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Leah+Fashion+Busweru+Mwanza",
+    mapEmbed: "https://www.google.com/maps?q=Leah+Fashion+Busweru+Mwanza&output=embed"
   },
   footer: {
-    note: "Leah Fashion blends warm guidance, bridal craftsmanship, and celebration styling for elegant wedding moments.",
-    instagram: "https://instagram.com/leahfashion",
-    facebook: "https://facebook.com/leahfashion"
+    note: "Leah Fashion in Busweru, Mwanza blends award-recognized bridal craftsmanship, warm guidance, and joyful celebration styling.",
+    instagram: "https://instagram.com/leahfashion_",
+    facebook: "https://facebook.com/leahfashion_",
+    tiktok: "https://www.tiktok.com/@leahfashiontz"
   }
 };

@@ -96,28 +96,59 @@ function normalizeSiteContent(content) {
   if (
     !merged.whyUs.intro ||
     merged.whyUs.intro ===
-      "We keep the experience simple, elegant, and stress-light. Every collection is presented in a focused way so visitors find what matters quickly without visual overload."
+      "We keep the experience simple, elegant, and stress-light. Every collection is presented in a focused way so visitors find what matters quickly without visual overload." ||
+    merged.whyUs.intro ===
+      "Clients choose Leah Fashion because the studio combines calm guidance, fitting accuracy, and a polished wedding finish. Every stage, from consultation to final adjustment, is explained clearly so brides and families feel relaxed, informed, and confident in the final look."
   ) {
     merged.whyUs.intro = defaultContent.whyUs.intro;
   }
 
   if (
     !merged.whyUs.awardsTitle ||
-    merged.whyUs.awardsTitle === "Recognized craftsmanship and service"
+    merged.whyUs.awardsTitle === "Recognized craftsmanship and service" ||
+    merged.whyUs.awardsTitle === "Awards and recognition earned through bridal craftsmanship"
   ) {
     merged.whyUs.awardsTitle = defaultContent.whyUs.awardsTitle;
   }
 
   if (
-    Array.isArray(merged.whyUs.awards) &&
-    merged.whyUs.awards.length === 4 &&
-    merged.whyUs.awards.every((item, index) =>
+    Array.isArray(merged.whyUs.pillars) &&
+    merged.whyUs.pillars.length === 4 &&
+    merged.whyUs.pillars.every((item, index) =>
       [
-        "Bridal Style Excellence",
-        "Client Choice Studio",
-        "Creative Wedding Couture",
-        "Emerging Fashion House"
+        "Guided Consultations",
+        "Tailored Finishing",
+        "Joyful Fittings",
+        "Recognized Craft"
       ][index] === item.title
+    )
+  ) {
+    merged.whyUs.pillars = clone(defaultContent.whyUs.pillars);
+  }
+
+  if (
+    Array.isArray(merged.whyUs.awards) &&
+    (
+      (merged.whyUs.awards.length === 4 &&
+        merged.whyUs.awards.every((item, index) =>
+          [
+            "Bridal Style Excellence",
+            "Client Choice Studio",
+            "Creative Wedding Couture",
+            "Emerging Fashion House"
+          ][index] === item.title
+        )) ||
+      (merged.whyUs.awards.length === 6 &&
+        merged.whyUs.awards.every((item, index) =>
+          [
+            "Bridal Style Excellence",
+            "Client Choice Studio",
+            "Creative Wedding Couture",
+            "Emerging Fashion House",
+            "Elegant Occasion Wear Recognition",
+            "Fashion Craft Merit"
+          ][index] === item.title
+        ))
     )
   ) {
     merged.whyUs.awards = clone(defaultContent.whyUs.awards);
@@ -197,9 +228,26 @@ function normalizeSiteContent(content) {
   }
 
   if (
+    !merged.contact.intro ||
+    merged.contact.intro === "Invite clients to call, email, or chat directly with the Leah Fashion studio."
+  ) {
+    merged.contact.intro = defaultContent.contact.intro;
+  }
+
+  if (
+    Array.isArray(merged.contact.cards) &&
+    merged.contact.cards[0] &&
+    merged.contact.cards[0].text === "+255 700 123 456"
+  ) {
+    merged.contact.cards[0].text = defaultContent.contact.cards[0].text;
+    merged.contact.cards[0].title = defaultContent.contact.cards[0].title;
+  }
+
+  if (
     Array.isArray(merged.contact.cards) &&
     merged.contact.cards[2] &&
-    merged.contact.cards[2].text === "Dar es Salaam, Tanzania"
+    (merged.contact.cards[2].text === "Dar es Salaam, Tanzania" ||
+      merged.contact.cards[2].text === "Buswelu, Mwanza")
   ) {
     merged.contact.cards[2].text = defaultContent.contact.cards[2].text;
   }
@@ -212,28 +260,67 @@ function normalizeSiteContent(content) {
     merged.contact.cards[3].text = defaultContent.contact.cards[3].text;
   }
 
-  if (!merged.contact.locationTitle || merged.contact.locationTitle === "Dar es Salaam, Tanzania") {
+  if (!merged.contact.call || merged.contact.call === "+255700123456") {
+    merged.contact.call = defaultContent.contact.call;
+  }
+
+  if (!merged.contact.whatsapp || merged.contact.whatsapp === "+255700123456") {
+    merged.contact.whatsapp = defaultContent.contact.whatsapp;
+  }
+
+  if (
+    !merged.contact.locationTitle ||
+    merged.contact.locationTitle === "Dar es Salaam, Tanzania" ||
+    merged.contact.locationTitle === "Buswelu, Mwanza"
+  ) {
     merged.contact.locationTitle = defaultContent.contact.locationTitle;
   }
 
   if (
     !merged.contact.locationSummary ||
     merged.contact.locationSummary ===
-      "Visit the Leah Fashion studio for fittings and custom consultations."
+      "Visit the Leah Fashion studio for fittings and custom consultations." ||
+    merged.contact.locationSummary ===
+      "Visit Leah Fashion in Buswelu, Mwanza for bridal fittings, custom consultations, and wedding styling guidance in a calm studio setting."
   ) {
     merged.contact.locationSummary = defaultContent.contact.locationSummary;
   }
 
-  if (!merged.contact.mapEmbed) {
+  if (
+    !merged.contact.directionsUrl ||
+    merged.contact.directionsUrl ===
+      "https://www.google.com/maps/dir/?api=1&destination=Buswelu,+Mwanza"
+  ) {
+    merged.contact.directionsUrl = defaultContent.contact.directionsUrl;
+  }
+
+  if (
+    !merged.contact.mapEmbed ||
+    merged.contact.mapEmbed === "https://www.google.com/maps?q=Buswelu,+Mwanza&output=embed"
+  ) {
     merged.contact.mapEmbed = defaultContent.contact.mapEmbed;
   }
 
   if (
     !merged.footer.note ||
     merged.footer.note ===
-      "Leah Fashion creates wedding looks with refined craft, joyful energy, and client-friendly presentation."
+      "Leah Fashion creates wedding looks with refined craft, joyful energy, and client-friendly presentation." ||
+    merged.footer.note ===
+      "Leah Fashion blends warm guidance, bridal craftsmanship, and celebration styling for elegant wedding moments."
   ) {
     merged.footer.note = defaultContent.footer.note;
+  }
+
+  if (!merged.footer.instagram || merged.footer.instagram === "https://instagram.com/leahfashion") {
+    merged.footer.instagram = defaultContent.footer.instagram;
+  }
+
+  if (!merged.footer.facebook || merged.footer.facebook === "https://facebook.com/leahfashion") {
+    merged.footer.facebook = defaultContent.footer.facebook;
+  }
+
+  if (!merged.footer.tiktok) {
+    merged.footer.tiktok = defaultContent.footer.tiktok;
   }
 
   if (

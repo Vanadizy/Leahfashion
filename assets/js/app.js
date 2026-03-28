@@ -87,7 +87,7 @@ const defaultContent = {
   },
   whyUs: {
     title: "Why clients trust Leah Fashion",
-    intro: "Clients choose Leah Fashion because the studio combines calm guidance, fitting accuracy, and a polished wedding finish. Every stage, from consultation to final adjustment, is explained clearly so brides and families feel relaxed, informed, and confident in the final look.",
+    intro: "Clients choose Leah Fashion because the studio combines calm guidance, fitting accuracy, and a polished wedding finish. The brand also carries visible women-led recognition from 2025 and a creative story rooted in Mwanza, giving brides confidence in both the craftsmanship and the woman behind the label.",
     pillars: [
       {
         title: "Guided Consultations",
@@ -102,53 +102,35 @@ const defaultContent = {
         text: "Warm communication, clear timelines, and thoughtful adjustments keep the process exciting rather than stressful, especially close to the wedding day."
       },
       {
-        title: "Recognized Craft",
-        text: "The studio's awards and client praise reflect consistent bridal workmanship, memorable styling, and a finish that photographs beautifully."
+        title: "Recognized Leadership",
+        text: "Leah Fashion connects bridal workmanship with public recognition, including the 2025 Mwanamke Kinara and Mwanamke Shupavu mentions, alongside the founder story of Cherehani Festival Tanzania beginning from Mwanza."
       }
     ],
-    awardsTitle: "Awards and recognition earned through bridal craftsmanship",
+    awardsTitle: "Awards and leadership milestones behind Leah Fashion",
     awards: [
       {
         year: "2025",
-        title: "Bridal Style Excellence",
-        text: "Recognized for polished gown finishing, fitting precision, and strong ceremony presentation.",
-        image: "assets/images/fitting.jpeg",
-        alt: "Bride wearing a fitted white wedding gown outdoors"
-      },
-      {
-        year: "2024",
-        title: "Client Choice Studio",
-        text: "Awarded for a warm client journey, dependable communication, and memorable bridal delivery.",
-        image: "assets/images/satisfied_fitting.jpeg",
-        alt: "Smiling woman wearing an orange fitted gown"
-      },
-      {
-        year: "2023",
-        title: "Creative Wedding Couture",
-        text: "Celebrated for expressive wedding styling, confident silhouettes, and event-ready couture detail.",
-        image: "assets/images/details.jpeg",
-        alt: "Woman in an embellished orange evening gown"
-      },
-      {
-        year: "2022",
-        title: "Emerging Fashion House",
-        text: "Honored for rising design quality, growing bridal demand, and refined finishing standards.",
-        image: "assets/images/designs.jpeg",
-        alt: "Woman wearing a black and gold reception dress"
-      },
-      {
-        year: "2021",
-        title: "Elegant Occasion Wear Recognition",
-        text: "Praised for reception looks and occasion pieces that balance glamour, comfort, and movement.",
+        title: "Mwanamke Kinara Awards 2025",
+        meta: "Women-led impact recognition",
+        text: "Public coverage around Mwanamke Kinara presents it as a recognition platform that highlights standout women and visible community or business impact. On this site, it marks Leah Fashion's 2025 recognition for creative leadership and brand influence from Mwanza.",
         image: "assets/images/leah.jpeg",
-        alt: "Leah Fashion owner in a tailored outfit with measuring tape"
+        alt: "Leah Fashion founder portrait used for the Mwanamke Kinara Awards card"
       },
       {
-        year: "2020",
-        title: "Fashion Craft Merit",
-        text: "Recognized for careful stitching, confident tailoring, and a clear design vision for celebration wear.",
-        image: "assets/images/fitting.jpeg",
-        alt: "Bride wearing a fitted white wedding gown outdoors"
+        year: "2025",
+        title: "Mwanamke Shupavu 2025",
+        meta: "Resilience and bold leadership",
+        text: "The site presents this 2025 award as recognition for courage, persistence, and women-led enterprise growth. Public documentation on the exact 2025 award wording is limited, so the description follows the award title you provided and the common Tanzanian use of 'mwanamke shupavu' for resilient, barrier-breaking women.",
+        image: "assets/images/details.jpeg",
+        alt: "Leah Fashion couture detail image used for the Mwanamke Shupavu award card"
+      },
+      {
+        year: "Founder",
+        title: "Cherehani Festival Tanzania",
+        meta: "Started from Mwanza",
+        text: "Leah Fashion also presents Leah as the founder of Cherehani Festival Tanzania, a creative initiative described by the brand as starting from Mwanza to celebrate fashion skill, visibility, and local design energy.",
+        image: "assets/images/designs.jpeg",
+        alt: "Leah Fashion occasion-wear image used for the Cherehani Festival Tanzania founder card"
       }
     ]
   },
@@ -242,11 +224,11 @@ const defaultContent = {
   },
   contact: {
     title: "Plan a fitting or ask about a custom design",
-    intro: "Invite clients to call, email, or chat directly with the Leah Fashion studio.",
+    intro: "Call, WhatsApp, or request directions directly to Leah Fashion in Busweru, Mwanza.",
     cards: [
       {
-        title: "Phone",
-        text: "+255 700 123 456"
+        title: "Calls & WhatsApp",
+        text: "+255 769 727 070"
       },
       {
         title: "Email",
@@ -254,25 +236,27 @@ const defaultContent = {
       },
       {
         title: "Location",
-        text: "Buswelu, Mwanza"
+        text: "Leah Fashion Busweru, Mwanza"
       },
       {
         title: "Studio Hours",
         text: "Mon - Thu | 9:00 AM - 6:00 PM, Fri | 9:00 AM - 2:00 PM, Sat - Sun | Closed"
       }
     ],
-    call: "+255700123456",
+    call: "+255769727070",
     email: "hello@leahfashion.com",
-    whatsapp: "+255700123456",
-    locationTitle: "Buswelu, Mwanza",
+    whatsapp: "+255769727070",
+    locationTitle: "Leah Fashion Busweru Mwanza",
     locationSummary:
-      "Visit Leah Fashion in Buswelu, Mwanza for bridal fittings, custom consultations, and wedding styling guidance in a calm studio setting.",
-    mapEmbed: "https://www.google.com/maps?q=Buswelu,+Mwanza&output=embed"
+      "Visit Leah Fashion Busweru Mwanza for bridal fittings, custom consultations, and wedding styling guidance in a calm studio setting, then use the directions link below to open the route directly in Google Maps.",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Leah+Fashion+Busweru+Mwanza",
+    mapEmbed: "https://www.google.com/maps?q=Leah+Fashion+Busweru+Mwanza&output=embed"
   },
   footer: {
-    note: "Leah Fashion blends warm guidance, bridal craftsmanship, and celebration styling for elegant wedding moments.",
-    instagram: "https://instagram.com/leahfashion",
-    facebook: "https://facebook.com/leahfashion"
+    note: "Leah Fashion in Busweru, Mwanza blends award-recognized bridal craftsmanship, warm guidance, and joyful celebration styling.",
+    instagram: "https://instagram.com/leahfashion_",
+    facebook: "https://facebook.com/leahfashion_",
+    tiktok: "https://www.tiktok.com/@leahfashiontz"
   }
 };
 
@@ -513,7 +497,7 @@ function renderSite() {
         <div class="award-card-body">
           <div class="award-card-head">
             <span class="award-year">${escapeHtml(item.year)}</span>
-            <span class="award-issued">Presented in ${escapeHtml(item.year)}</span>
+            <span class="award-issued">${escapeHtml(item.meta || `Presented in ${item.year}`)}</span>
           </div>
           <h4>${escapeHtml(item.title)}</h4>
           <p>${escapeHtml(item.text)}</p>
@@ -616,6 +600,15 @@ function renderSite() {
   whatsappLink.target = "_blank";
   whatsappLink.rel = "noreferrer";
 
+  const directionsLink = document.getElementById("contact-directions-link");
+  if (directionsLink) {
+    directionsLink.href =
+      sanitizeLinkValue(siteContent.contact.directionsUrl) ||
+      defaultContent.contact.directionsUrl;
+    directionsLink.target = "_blank";
+    directionsLink.rel = "noreferrer";
+  }
+
   const floatingWhatsapp = document.getElementById("floating-whatsapp");
   floatingWhatsapp.href = `https://wa.me/${digitsOnly(siteContent.contact.whatsapp)}`;
   floatingWhatsapp.target = "_blank";
@@ -624,6 +617,10 @@ function renderSite() {
   setText("footer-note", siteContent.footer.note);
   document.getElementById("instagram-link").href = siteContent.footer.instagram || "#";
   document.getElementById("facebook-link").href = siteContent.footer.facebook || "#";
+  const tiktokLink = document.getElementById("tiktok-link");
+  if (tiktokLink) {
+    tiktokLink.href = siteContent.footer.tiktok || "#";
+  }
 }
 
 function observeSections() {
@@ -1104,28 +1101,59 @@ async function loadContent() {
     if (
       !merged.whyUs.intro ||
       merged.whyUs.intro ===
-        "We keep the experience simple, elegant, and stress-light. Every collection is presented in a focused way so visitors find what matters quickly without visual overload."
+        "We keep the experience simple, elegant, and stress-light. Every collection is presented in a focused way so visitors find what matters quickly without visual overload." ||
+      merged.whyUs.intro ===
+        "Clients choose Leah Fashion because the studio combines calm guidance, fitting accuracy, and a polished wedding finish. Every stage, from consultation to final adjustment, is explained clearly so brides and families feel relaxed, informed, and confident in the final look."
     ) {
       merged.whyUs.intro = defaultContent.whyUs.intro;
     }
 
     if (
       !merged.whyUs.awardsTitle ||
-      merged.whyUs.awardsTitle === "Recognized craftsmanship and service"
+      merged.whyUs.awardsTitle === "Recognized craftsmanship and service" ||
+      merged.whyUs.awardsTitle === "Awards and recognition earned through bridal craftsmanship"
     ) {
       merged.whyUs.awardsTitle = defaultContent.whyUs.awardsTitle;
     }
 
     if (
-      Array.isArray(merged.whyUs.awards) &&
-      merged.whyUs.awards.length === 4 &&
-      merged.whyUs.awards.every((item, index) =>
+      Array.isArray(merged.whyUs.pillars) &&
+      merged.whyUs.pillars.length === 4 &&
+      merged.whyUs.pillars.every((item, index) =>
         [
-          "Bridal Style Excellence",
-          "Client Choice Studio",
-          "Creative Wedding Couture",
-          "Emerging Fashion House"
+          "Guided Consultations",
+          "Tailored Finishing",
+          "Joyful Fittings",
+          "Recognized Craft"
         ][index] === item.title
+      )
+    ) {
+      merged.whyUs.pillars = clone(defaultContent.whyUs.pillars);
+    }
+
+    if (
+      Array.isArray(merged.whyUs.awards) &&
+      (
+        (merged.whyUs.awards.length === 4 &&
+          merged.whyUs.awards.every((item, index) =>
+            [
+              "Bridal Style Excellence",
+              "Client Choice Studio",
+              "Creative Wedding Couture",
+              "Emerging Fashion House"
+            ][index] === item.title
+          )) ||
+        (merged.whyUs.awards.length === 6 &&
+          merged.whyUs.awards.every((item, index) =>
+            [
+              "Bridal Style Excellence",
+              "Client Choice Studio",
+              "Creative Wedding Couture",
+              "Emerging Fashion House",
+              "Elegant Occasion Wear Recognition",
+              "Fashion Craft Merit"
+            ][index] === item.title
+          ))
       )
     ) {
       merged.whyUs.awards = clone(defaultContent.whyUs.awards);
@@ -1205,9 +1233,26 @@ async function loadContent() {
     }
 
     if (
+      !merged.contact.intro ||
+      merged.contact.intro === "Invite clients to call, email, or chat directly with the Leah Fashion studio."
+    ) {
+      merged.contact.intro = defaultContent.contact.intro;
+    }
+
+    if (
+      Array.isArray(merged.contact.cards) &&
+      merged.contact.cards[0] &&
+      merged.contact.cards[0].text === "+255 700 123 456"
+    ) {
+      merged.contact.cards[0].text = defaultContent.contact.cards[0].text;
+      merged.contact.cards[0].title = defaultContent.contact.cards[0].title;
+    }
+
+    if (
       Array.isArray(merged.contact.cards) &&
       merged.contact.cards[2] &&
-      merged.contact.cards[2].text === "Dar es Salaam, Tanzania"
+      (merged.contact.cards[2].text === "Dar es Salaam, Tanzania" ||
+        merged.contact.cards[2].text === "Buswelu, Mwanza")
     ) {
       merged.contact.cards[2].text = defaultContent.contact.cards[2].text;
     }
@@ -1220,27 +1265,72 @@ async function loadContent() {
       merged.contact.cards[3].text = defaultContent.contact.cards[3].text;
     }
 
-    if (!merged.contact.locationTitle || merged.contact.locationTitle === "Dar es Salaam, Tanzania") {
+    if (
+      !merged.contact.call ||
+      merged.contact.call === "+255700123456"
+    ) {
+      merged.contact.call = defaultContent.contact.call;
+    }
+
+    if (
+      !merged.contact.whatsapp ||
+      merged.contact.whatsapp === "+255700123456"
+    ) {
+      merged.contact.whatsapp = defaultContent.contact.whatsapp;
+    }
+
+    if (
+      !merged.contact.locationTitle ||
+      merged.contact.locationTitle === "Dar es Salaam, Tanzania" ||
+      merged.contact.locationTitle === "Buswelu, Mwanza"
+    ) {
       merged.contact.locationTitle = defaultContent.contact.locationTitle;
     }
 
     if (
       !merged.contact.locationSummary ||
-      merged.contact.locationSummary === "Visit the Leah Fashion studio for fittings and custom consultations."
+      merged.contact.locationSummary === "Visit the Leah Fashion studio for fittings and custom consultations." ||
+      merged.contact.locationSummary ===
+        "Visit Leah Fashion in Buswelu, Mwanza for bridal fittings, custom consultations, and wedding styling guidance in a calm studio setting."
     ) {
       merged.contact.locationSummary = defaultContent.contact.locationSummary;
     }
 
-    if (!merged.contact.mapEmbed) {
+    if (
+      !merged.contact.directionsUrl ||
+      merged.contact.directionsUrl ===
+        "https://www.google.com/maps/dir/?api=1&destination=Buswelu,+Mwanza"
+    ) {
+      merged.contact.directionsUrl = defaultContent.contact.directionsUrl;
+    }
+
+    if (
+      !merged.contact.mapEmbed ||
+      merged.contact.mapEmbed === "https://www.google.com/maps?q=Buswelu,+Mwanza&output=embed"
+    ) {
       merged.contact.mapEmbed = defaultContent.contact.mapEmbed;
     }
 
   if (
     !merged.footer.note ||
     merged.footer.note ===
-      "Leah Fashion creates wedding looks with refined craft, joyful energy, and client-friendly presentation."
+      "Leah Fashion creates wedding looks with refined craft, joyful energy, and client-friendly presentation." ||
+    merged.footer.note ===
+      "Leah Fashion blends warm guidance, bridal craftsmanship, and celebration styling for elegant wedding moments."
     ) {
       merged.footer.note = defaultContent.footer.note;
+    }
+
+    if (!merged.footer.instagram || merged.footer.instagram === "https://instagram.com/leahfashion") {
+      merged.footer.instagram = defaultContent.footer.instagram;
+    }
+
+    if (!merged.footer.facebook || merged.footer.facebook === "https://facebook.com/leahfashion") {
+      merged.footer.facebook = defaultContent.footer.facebook;
+    }
+
+    if (!merged.footer.tiktok) {
+      merged.footer.tiktok = defaultContent.footer.tiktok;
     }
 
     if (
