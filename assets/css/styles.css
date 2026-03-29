@@ -242,6 +242,83 @@ h1 {
     transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
+.language-switcher {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(76, 49, 20, 0.08);
+}
+
+.language-caption {
+  padding-inline: 0.2rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.language-toggle,
+.language-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.82rem 0.9rem;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 169, 90, 0.08);
+  background: rgba(255, 250, 243, 0.34);
+  color: var(--ink);
+  transition: background-color 180ms ease, color 180ms ease,
+    transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible,
+.language-option:hover,
+.language-option:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(212, 169, 90, 0.18);
+  color: var(--accent-deep);
+}
+
+.language-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.72rem;
+}
+
+.language-flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.language-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.language-caret {
+  font-size: 0.74rem;
+  transition: transform 180ms ease;
+}
+
+.language-options {
+  display: none;
+  gap: 0.35rem;
+}
+
+.language-switcher.is-open .language-options {
+  display: grid;
+}
+
+.language-switcher.is-open .language-caret {
+  transform: rotate(180deg);
+}
+
 .site-nav.is-open {
   display: grid;
 }
@@ -270,6 +347,29 @@ h1 {
   border-color: transparent;
   background: transparent;
   color: #fff9f1;
+}
+
+.site-header.is-landing .language-switcher {
+  border-top-color: rgba(247, 229, 191, 0.14);
+}
+
+.site-header.is-landing .language-caption {
+  color: rgba(255, 249, 241, 0.74);
+}
+
+.site-header.is-landing .language-toggle,
+.site-header.is-landing .language-option {
+  border-color: transparent;
+  background: transparent;
+  color: #fff9f1;
+}
+
+.site-header.is-landing .language-toggle:hover,
+.site-header.is-landing .language-toggle:focus-visible,
+.site-header.is-landing .language-option:hover,
+.site-header.is-landing .language-option:focus-visible {
+  background: rgba(255, 241, 212, 0.12);
+  color: #f4d596;
 }
 
 .site-header.is-landing .nav-toggle {
@@ -2186,6 +2286,8 @@ blockquote {
 .section-button:focus-visible,
 .action-link:focus-visible,
 .site-nav a:focus-visible,
+.language-toggle:focus-visible,
+.language-option:focus-visible,
 .footer-nav a:focus-visible,
 .floating-icon-button:focus-visible,
 .nav-toggle:focus-visible {

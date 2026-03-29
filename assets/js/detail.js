@@ -5,6 +5,7 @@ const navToggle = document.getElementById("nav-toggle");
 const siteNav = document.getElementById("site-nav");
 const floatingActions = document.getElementById("floating-actions");
 const backToTopButton = document.getElementById("back-to-top");
+const i18n = window.LeahI18n || null;
 
 function setNavOpen(isOpen) {
   if (!siteNav || !navToggle) {
@@ -65,6 +66,12 @@ function syncFloatingActions() {
   floatingActions.classList.toggle("is-visible", window.scrollY > 120);
 }
 
+function getPageKey() {
+  return window.location.pathname.toLowerCase().includes("gallery")
+    ? "gallery"
+    : "catalog";
+}
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", toggleNav);
   siteNav.addEventListener("click", closeNavOnLink);
@@ -89,5 +96,11 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+if (i18n) {
+  i18n.applyPageTranslations(getPageKey());
+  i18n.mountLanguageMenu();
+}
+
 syncHeaderState();
 syncFloatingActions();

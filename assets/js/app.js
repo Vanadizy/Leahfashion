@@ -277,6 +277,7 @@ const galleryTrack = document.getElementById("gallery-grid");
 const galleryDots = document.getElementById("gallery-dots");
 const floatingActions = document.getElementById("floating-actions");
 const backToTopButton = document.getElementById("back-to-top");
+const i18n = window.LeahI18n || null;
 let siteContent = clone(defaultContent);
 const awardsState = {
   currentIndex: 0,
@@ -311,7 +312,12 @@ initialize();
 
 async function initialize() {
   siteContent = await loadContent();
+  siteContent = i18n ? i18n.localizeContent(siteContent) : siteContent;
   renderSite();
+  if (i18n) {
+    i18n.applyPageTranslations("home");
+    i18n.mountLanguageMenu();
+  }
   setupAwardsCarousel();
   setupMobileScrollers();
   attachEvents();
@@ -366,12 +372,17 @@ function submitContactForm(event) {
 
   if (!name || !phone || !email || !service || !message) {
     if (status) {
-      status.textContent = "Complete all fields before sending the inquiry.";
+      status.textContent = getUiText(
+        "inquiryRequired",
+        "Complete all fields before sending the inquiry."
+      );
     }
     return;
   }
 
-  const subject = encodeURIComponent(`Leah Fashion Inquiry | ${name} | ${service}`);
+  const subject = encodeURIComponent(
+    `${getUiText("inquirySubject", "Leah Fashion Inquiry")} | ${name} | ${service}`
+  );
   const body = encodeURIComponent(
     [
       `Name: ${name}`,
@@ -385,7 +396,10 @@ function submitContactForm(event) {
   );
 
   if (status) {
-    status.textContent = "Opening your email app with the inquiry prepared for Leah Fashion.";
+    status.textContent = getUiText(
+      "inquiryOpening",
+      "Opening your email app with the inquiry prepared for Leah Fashion."
+    );
   }
 
   window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
@@ -506,8 +520,9 @@ function renderSite() {
   );
 
   const heroButton = document.getElementById("hero-button");
-  heroButton.textContent = siteContent.hero.buttonLabel || "Read More";
+  heroButton.textContent = siteContent.hero.buttonLabel || getUiText("readMore", "Read More");
   heroButton.setAttribute("href", siteContent.hero.buttonTarget || "#about");
+  setText("hero-contact-button", getUiText("contactUs", "Contact Us"));
 
   setText("why-title", siteContent.whyUs.title);
   setText("why-intro", siteContent.whyUs.intro);
@@ -537,12 +552,12 @@ function renderSite() {
             alt="${escapeAttribute(getAwardAlt(item, index))}"
             loading="lazy"
           />
-          <span class="award-mark">Award</span>
+          <span class="award-mark">${escapeHtml(getUiText("awardMark", "Award"))}</span>
         </div>
         <div class="award-card-body">
           <div class="award-card-head">
             <span class="award-year">${escapeHtml(item.year)}</span>
-            <span class="award-issued">${escapeHtml(item.meta || `Presented in ${item.year}`)}</span>
+            <span class="award-issued">${escapeHtml(item.meta || getUiText("presentedIn", `Presented in ${item.year}`, { year: item.year }))}</span>
           </div>
           <h4>${escapeHtml(item.title)}</h4>
           <p>${escapeHtml(item.text)}</p>
@@ -566,7 +581,7 @@ function renderSite() {
           <h3>${escapeHtml(item.title)}</h3>
           <p>${escapeHtml(item.description)}</p>
           <div class="catalog-actions">
-            <a class="card-link" href="${escapeAttribute(item.link || "catalog.html")}">${escapeHtml(item.action || "See Details")}</a>
+            <a class="card-link" href="${escapeAttribute(item.link || "catalog.html")}">${escapeHtml(item.action || getUiText("readMore", "Read More"))}</a>
           </div>
         </div>
       </article>
@@ -664,7 +679,7 @@ function renderSite() {
 
   const emailLink = document.getElementById("contact-email-link");
   emailLink.href = `mailto:${sanitizeLinkValue(siteContent.contact.email)}?subject=${encodeURIComponent(
-    "Leah Fashion Inquiry"
+    getUiText("inquirySubject", "Leah Fashion Inquiry")
   )}&body=${encodeURIComponent(getDefaultInquiryMessage())}`;
 
   const whatsappLink = document.getElementById("contact-whatsapp-link");
@@ -1124,13 +1139,18 @@ function pauseMobileScroller(state) {
 
 function getDefaultInquiryMessage() {
   return [
-    `Hello ${siteContent.brand.name},`,
+    getUiText("inquiryGreeting", `Hello ${siteContent.brand.name},`, {
+      name: siteContent.brand.name
+    }),
     "",
-    "I found you on the website and I would like to ask about my bridal design / fitting request.",
+    getUiText(
+      "inquiryLead",
+      "I found you on the website and I would like to ask about my bridal design / fitting request."
+    ),
     "",
-    "Event date:",
-    "Preferred style:",
-    "More details:"
+    getUiText("eventDate", "Event date:"),
+    getUiText("preferredStyle", "Preferred style:"),
+    getUiText("moreDetails", "More details:")
   ].join("\n");
 }
 
@@ -1157,7 +1177,7 @@ function renderCarouselDots(container, total, activeIndex, onSelect) {
         class="carousel-dot${isActive ? " is-active" : ""}"
         type="button"
         data-index="${index}"
-        aria-label="Go to slide ${index + 1}"
+        aria-label="${escapeAttribute(getUiText("slideLabel", `Go to slide ${index + 1}`, { index: index + 1 }))}"
         aria-pressed="${isActive ? "true" : "false"}"
       ></button>
     `;
@@ -1528,7 +1548,8 @@ function renderCards(node, items, template) {
 }
 
 function getAboutKicker(index) {
-  return ["Bloom", "Joy", "Grace"][index] || "Leah Fashion";
+  const translatedKickers = getUiText("aboutKickers", ["Bloom", "Joy", "Grace"]);
+  return translatedKickers[index] || "Leah Fashion";
 }
 
 function getAboutIcon(index) {
@@ -1659,4 +1680,18 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value).replace(/`/g, "&#96;");
+}
+
+function getUiText(key, fallback, tokens) {
+  if (!i18n || typeof i18n.t !== "function") {
+    return fallback;
+  }
+
+  const translated = i18n.t(key, tokens);
+
+  if (Array.isArray(fallback)) {
+    return Array.isArray(translated) && translated.length ? translated : fallback;
+  }
+
+  return translated || fallback;
 }

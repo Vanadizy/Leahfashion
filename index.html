@@ -233,19 +233,19 @@
                 <form class="contact-form" id="contact-form">
                   <div class="contact-form-grid">
                     <label class="form-field">
-                      Full Name
+                      <span class="field-label" id="contact-name-label">Full Name</span>
                       <input id="contact-name" name="name" type="text" required />
                     </label>
                     <label class="form-field">
-                      Phone Number
+                      <span class="field-label" id="contact-phone-label">Phone Number</span>
                       <input id="contact-phone" name="phone" type="tel" required />
                     </label>
                     <label class="form-field">
-                      Email Address
+                      <span class="field-label" id="contact-email-label">Email Address</span>
                       <input id="contact-email-input" name="email" type="email" required />
                     </label>
                     <label class="form-field">
-                      Service Needed
+                      <span class="field-label" id="contact-service-label">Service Needed</span>
                       <select id="contact-service" name="service" required>
                         <option value="">Select a service</option>
                         <option value="Wedding gown">Wedding gown</option>
@@ -257,7 +257,7 @@
                   </div>
 
                   <label class="form-field form-field--full">
-                    Message
+                    <span class="field-label" id="contact-message-label">Message</span>
                     <textarea
                       id="contact-message-input"
                       name="message"
@@ -441,6 +441,7 @@ More details:</textarea>
       </button>
     </div>
 
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
