@@ -350,6 +350,30 @@
           type="button"
           aria-label="Close image viewer"
         ></button>
+        <button
+          class="lightbox-nav lightbox-nav--prev"
+          id="lightbox-prev"
+          type="button"
+          aria-label="Previous image"
+        >
+          <span aria-hidden="true">&#8592;</span>
+        </button>
+        <button
+          class="lightbox-close"
+          id="lightbox-close"
+          type="button"
+          aria-label="Close image viewer"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <button
+          class="lightbox-nav lightbox-nav--next"
+          id="lightbox-next"
+          type="button"
+          aria-label="Next image"
+        >
+          <span aria-hidden="true">&#8594;</span>
+        </button>
         <div
           class="lightbox-dialog"
           role="dialog"
@@ -357,33 +381,9 @@
           aria-labelledby="lightbox-title"
         >
           <div class="lightbox-stage">
-            <button
-              class="lightbox-nav lightbox-nav--prev"
-              id="lightbox-prev"
-              type="button"
-              aria-label="Previous image"
-            >
-              <span aria-hidden="true">&#8592;</span>
-            </button>
-            <button
-              class="lightbox-close"
-              id="lightbox-close"
-              type="button"
-              aria-label="Close image viewer"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
             <div class="lightbox-media">
               <img id="lightbox-image" src="" alt="" />
             </div>
-            <button
-              class="lightbox-nav lightbox-nav--next"
-              id="lightbox-next"
-              type="button"
-              aria-label="Next image"
-            >
-              <span aria-hidden="true">&#8594;</span>
-            </button>
           </div>
           <div class="lightbox-copy">
             <div class="lightbox-meta">
