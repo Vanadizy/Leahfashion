@@ -20,6 +20,7 @@ const lightboxDetails = document.getElementById("lightbox-details");
 const i18n = window.LeahI18n || null;
 let currentLightboxIndex = -1;
 let lastLightboxTrigger = null;
+let lightboxCloseTimer = null;
 
 function setNavOpen(isOpen) {
   if (!siteNav || !navToggle) {
@@ -186,13 +187,20 @@ function openLightbox(index) {
     return;
   }
 
+  if (lightboxCloseTimer) {
+    window.clearTimeout(lightboxCloseTimer);
+    lightboxCloseTimer = null;
+  }
+
   currentLightboxIndex = index;
   lastLightboxTrigger = card;
   syncLightboxContent(card);
 
   lightbox.hidden = false;
+  lightbox.classList.remove("is-closing");
   document.body.classList.add("panel-open");
   window.requestAnimationFrame(() => {
+    lightbox.classList.add("is-visible");
     lightboxCloseButton?.focus();
   });
 }
@@ -209,17 +217,27 @@ function stepLightbox(step) {
 }
 
 function closeLightbox() {
-  if (!lightbox) {
+  if (!lightbox || lightbox.hidden) {
     return;
   }
 
-  lightbox.hidden = true;
+  lightbox.classList.remove("is-visible");
+  lightbox.classList.add("is-closing");
   document.body.classList.remove("panel-open");
-  currentLightboxIndex = -1;
-  if (lightboxCounter) {
-    lightboxCounter.textContent = "";
+  if (lightboxCloseTimer) {
+    window.clearTimeout(lightboxCloseTimer);
   }
-  lastLightboxTrigger?.focus?.();
+
+  lightboxCloseTimer = window.setTimeout(() => {
+    lightbox.hidden = true;
+    lightbox.classList.remove("is-closing");
+    currentLightboxIndex = -1;
+    if (lightboxCounter) {
+      lightboxCounter.textContent = "";
+    }
+    lastLightboxTrigger?.focus?.();
+    lightboxCloseTimer = null;
+  }, 280);
 }
 
 function onDetailCardKeydown(event) {

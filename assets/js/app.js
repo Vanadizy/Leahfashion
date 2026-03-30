@@ -601,6 +601,9 @@ function renderSite() {
         <div class="gallery-copy">
           <h3>${escapeHtml(item.title)}</h3>
           <p>${escapeHtml(item.text)}</p>
+          <div class="gallery-actions">
+            <a class="card-link" href="${escapeAttribute(item.link || "gallery.html")}">${escapeHtml(item.action || getUiText("readMore", "Read More"))}</a>
+          </div>
         </div>
       </article>
     `
