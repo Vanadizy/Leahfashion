@@ -2948,7 +2948,8 @@ blockquote {
   }
 
   .detail-category-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.72rem;
   }
 
   .why-grid {
@@ -3299,7 +3300,8 @@ blockquote {
   }
 
   .detail-category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.48rem;
   }
 
   .detail-style-card,
@@ -3307,8 +3309,30 @@ blockquote {
     padding: 0;
   }
 
+  .detail-style-card .detail-copy {
+    gap: 0.16rem;
+    padding: 0.42rem 0.42rem 0.48rem;
+  }
+
+  .detail-style-card .detail-copy h3 {
+    font-size: 0.66rem;
+    line-height: 1.16;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .detail-style-card .detail-copy .section-tag {
+    margin-bottom: 0.08rem;
+    font-size: 0.38rem;
+    letter-spacing: 0.1em;
+  }
+
   .detail-media img {
-    min-height: 260px;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
   }
 
   .lightbox-dialog {
@@ -3383,6 +3407,20 @@ blockquote {
   }
 
   .detail-category-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.38rem;
+  }
+
+  .detail-style-card .detail-copy {
+    padding: 0.34rem 0.34rem 0.4rem;
+  }
+
+  .detail-style-card .detail-copy h3 {
+    font-size: 0.58rem;
+  }
+
+  .detail-style-card .detail-copy .section-tag {
+    font-size: 0.34rem;
+    letter-spacing: 0.08em;
   }
 }
