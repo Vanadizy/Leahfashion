@@ -17,6 +17,7 @@ const lightboxCounter = document.getElementById("lightbox-counter");
 const lightboxTitle = document.getElementById("lightbox-title");
 const lightboxText = document.getElementById("lightbox-text");
 const lightboxDetails = document.getElementById("lightbox-details");
+const lightboxRequestButton = document.getElementById("lightbox-request");
 const i18n = window.LeahI18n || null;
 let currentLightboxIndex = -1;
 let lastLightboxTrigger = null;
@@ -178,6 +179,12 @@ function syncLightboxContent(card) {
   lightboxTitle.textContent = title?.textContent?.trim() || "";
   lightboxText.textContent = text?.textContent?.trim() || "";
   renderLightboxDetails(card);
+  if (lightboxRequestButton) {
+    lightboxRequestButton.textContent = i18n
+      ? i18n.t("requestFitting", "Request a Fitting")
+      : "Request a Fitting";
+    lightboxRequestButton.setAttribute("href", "index.html#contact");
+  }
   syncLightboxNavigation();
 }
 

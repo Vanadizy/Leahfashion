@@ -499,12 +499,16 @@ function renderSite() {
   setText("hero-eyebrow", siteContent.hero.eyebrow);
   renderHeroTitle("hero-title", siteContent.hero.title);
   setText("hero-text", siteContent.hero.text);
+  const heroButton = document.getElementById("hero-button");
+  if (heroButton) {
+    heroButton.textContent = siteContent.hero.buttonLabel || getUiText("readMore", "Read More");
+    heroButton.setAttribute("href", siteContent.hero.buttonTarget || "#about");
+  }
   setText(
     "hero-badge-text",
     siteContent.hero.badgeText ||
       "Custom bridal design, refined fittings, and celebration styling shaped in Leah Fashion's warm studio process."
   );
-
   setText("hero-contact-button", getUiText("contactUs", "Contact Us"));
 
   setText("why-title", siteContent.whyUs.title);
@@ -555,7 +559,7 @@ function renderSite() {
     document.getElementById("catalog-grid"),
     siteContent.catalog.items,
     (item) => `
-      <a class="catalog-card catalog-card-link" href="${escapeAttribute(item.link || "catalog.html")}">
+      <article class="catalog-card">
         <div class="media-frame">
           <img src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.alt || item.title)}" loading="lazy" />
         </div>
@@ -564,7 +568,7 @@ function renderSite() {
           <h3>${escapeHtml(item.title)}</h3>
           <p>${escapeHtml(item.description)}</p>
         </div>
-      </a>
+      </article>
     `
   );
 
@@ -574,7 +578,7 @@ function renderSite() {
     document.getElementById("gallery-grid"),
     siteContent.gallery.items,
     (item) => `
-      <a class="gallery-card gallery-card-link" href="${escapeAttribute(item.link || "gallery.html")}">
+      <article class="gallery-card">
         <div class="media-frame">
           <img src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.alt || item.title)}" loading="lazy" />
         </div>
@@ -582,7 +586,7 @@ function renderSite() {
           <h3>${escapeHtml(item.title)}</h3>
           <p>${escapeHtml(item.text)}</p>
         </div>
-      </a>
+      </article>
     `
   );
 
