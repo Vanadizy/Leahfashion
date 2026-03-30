@@ -2226,8 +2226,8 @@ blockquote {
 
 .detail-category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
-  gap: 0.95rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .detail-card {
@@ -2285,7 +2285,7 @@ blockquote {
 
 .detail-style-card .detail-media img {
   min-height: 0;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1.08;
   transition: transform 260ms ease;
 }
 
@@ -2297,12 +2297,12 @@ blockquote {
 .detail-style-card .detail-copy {
   display: grid;
   gap: 0.22rem;
-  padding: 0.78rem 0.82rem 0.86rem;
+  padding: 0.64rem 0.72rem 0.72rem;
   background: rgba(255, 250, 244, 0.9);
 }
 
 .detail-style-card .detail-copy h3 {
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   line-height: 1.28;
   margin: 0.08rem 0 0;
 }
@@ -2313,7 +2313,7 @@ blockquote {
 
 .detail-style-card .detail-copy .section-tag {
   margin-bottom: 0.2rem;
-  font-size: 0.58rem;
+  font-size: 0.54rem;
   letter-spacing: 0.18em;
 }
 
@@ -2905,6 +2905,10 @@ blockquote {
     grid-auto-columns: minmax(240px, 26rem);
   }
 
+  .detail-category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .why-grid {
     gap: 0;
     padding: 0;
@@ -3060,7 +3064,8 @@ blockquote {
   .hero-copy {
     width: min(100%, 35rem);
     max-width: none;
-    padding-inline: clamp(0.45rem, 3.5vw, 0.95rem);
+    padding-inline-start: clamp(1rem, 5.5vw, 1.6rem);
+    padding-inline-end: clamp(0.45rem, 3.2vw, 0.9rem);
     margin-inline: 0;
     text-align: left;
   }
@@ -3242,7 +3247,7 @@ blockquote {
   }
 
   .detail-category-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .detail-style-card,
@@ -3310,5 +3315,11 @@ blockquote {
   .floating-icon-button--whatsapp svg {
     width: 1.14rem;
     height: 1.14rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .detail-category-grid {
+    grid-template-columns: 1fr;
   }
 }
