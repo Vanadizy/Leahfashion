@@ -175,31 +175,36 @@ const defaultContent = {
         title: "Leah Studio Moment",
         text: "A calm studio portrait that reflects the confidence, tailoring focus, and personal design direction behind each Leah Fashion piece.",
         image: "assets/images/leah.jpeg",
-        alt: "Leah Fashion owner in a tailored outfit with measuring tape"
+        alt: "Leah Fashion owner in a tailored outfit with measuring tape",
+        link: "gallery.html#studio-presence"
       },
       {
         title: "Luxury Detail",
         text: "Intricate beading, warm color, and sculpted finishing come together in a dramatic evening couture look.",
         image: "assets/images/details.jpeg",
-        alt: "Woman wearing an embellished orange gown"
+        alt: "Woman wearing an embellished orange gown",
+        link: "gallery.html#detail-direction"
       },
       {
         title: "Satisfied Fitting",
         text: "A completed fitting captured with joy, comfort, and confidence in the final silhouette.",
         image: "assets/images/satisfied_fitting.jpeg",
-        alt: "Smiling woman wearing an orange fitted gown"
+        alt: "Smiling woman wearing an orange fitted gown",
+        link: "gallery.html#happy-fitting"
       },
       {
         title: "Bridal Grace",
         text: "A clean bridal portrait that highlights fitted shaping, soft lace texture, and a polished wedding finish.",
         image: "assets/images/fitting.jpeg",
-        alt: "Bride in a white fitted wedding gown"
+        alt: "Bride in a white fitted wedding gown",
+        link: "gallery.html#bridal-finish"
       },
       {
         title: "Reception Statement",
         text: "A standout party look with bold contrast, rich texture, and unmistakable celebration energy.",
         image: "assets/images/designs.jpeg",
-        alt: "Woman wearing a dramatic black and gold event dress"
+        alt: "Woman wearing a dramatic black and gold event dress",
+        link: "gallery.html#reception-energy"
       }
     ]
   },
@@ -287,26 +292,7 @@ const awardsState = {
   autoTimer: null,
   touchStartX: 0
 };
-const mobileScrollerStates = [
-  {
-    name: "catalog",
-    track: catalogTrack,
-    dots: catalogDots,
-    selector: ".catalog-card",
-    currentIndex: 0,
-    autoTimer: null,
-    pauseUntil: 0
-  },
-  {
-    name: "gallery",
-    track: galleryTrack,
-    dots: galleryDots,
-    selector: ".gallery-card",
-    currentIndex: 0,
-    autoTimer: null,
-    pauseUntil: 0
-  }
-];
+const mobileScrollerStates = [];
 
 initialize();
 
@@ -519,9 +505,6 @@ function renderSite() {
       "Custom bridal design, refined fittings, and celebration styling shaped in Leah Fashion's warm studio process."
   );
 
-  const heroButton = document.getElementById("hero-button");
-  heroButton.textContent = siteContent.hero.buttonLabel || getUiText("readMore", "Read More");
-  heroButton.setAttribute("href", siteContent.hero.buttonTarget || "#about");
   setText("hero-contact-button", getUiText("contactUs", "Contact Us"));
 
   setText("why-title", siteContent.whyUs.title);
@@ -572,7 +555,7 @@ function renderSite() {
     document.getElementById("catalog-grid"),
     siteContent.catalog.items,
     (item) => `
-      <article class="catalog-card">
+      <a class="catalog-card catalog-card-link" href="${escapeAttribute(item.link || "catalog.html")}">
         <div class="media-frame">
           <img src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.alt || item.title)}" loading="lazy" />
         </div>
@@ -580,11 +563,8 @@ function renderSite() {
           <p class="mini-label">${escapeHtml(item.subtitle)}</p>
           <h3>${escapeHtml(item.title)}</h3>
           <p>${escapeHtml(item.description)}</p>
-          <div class="catalog-actions">
-            <a class="card-link" href="${escapeAttribute(item.link || "catalog.html")}">${escapeHtml(item.action || getUiText("readMore", "Read More"))}</a>
-          </div>
         </div>
-      </article>
+      </a>
     `
   );
 
@@ -594,18 +574,15 @@ function renderSite() {
     document.getElementById("gallery-grid"),
     siteContent.gallery.items,
     (item) => `
-      <article class="gallery-card">
+      <a class="gallery-card gallery-card-link" href="${escapeAttribute(item.link || "gallery.html")}">
         <div class="media-frame">
           <img src="${escapeAttribute(item.image)}" alt="${escapeAttribute(item.alt || item.title)}" loading="lazy" />
         </div>
         <div class="gallery-copy">
           <h3>${escapeHtml(item.title)}</h3>
           <p>${escapeHtml(item.text)}</p>
-          <div class="gallery-actions">
-            <a class="card-link" href="${escapeAttribute(item.link || "gallery.html")}">${escapeHtml(item.action || getUiText("readMore", "Read More"))}</a>
-          </div>
         </div>
-      </article>
+      </a>
     `
   );
 

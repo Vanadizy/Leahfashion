@@ -894,38 +894,19 @@ section[id] {
 }
 
 .catalog-grid {
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(250px, 22rem);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  justify-content: center;
+  justify-content: stretch;
   margin-inline: auto;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 0.35rem;
-  scroll-snap-type: x proximity;
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: auto;
-  touch-action: pan-x pan-y pinch-zoom;
-  -webkit-overflow-scrolling: touch;
-  cursor: grab;
-}
-
-.catalog-grid::-webkit-scrollbar,
-.gallery-grid::-webkit-scrollbar {
-  height: 0.5rem;
-}
-
-.catalog-grid::-webkit-scrollbar-thumb,
-.gallery-grid::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(212, 169, 90, 0.34);
-}
-
-.catalog-grid::-webkit-scrollbar-track,
-.gallery-grid::-webkit-scrollbar-track {
-  background: rgba(212, 169, 90, 0.08);
+  overflow: visible;
+  padding-bottom: 0;
+  scroll-snap-type: none;
+  overscroll-behavior: auto;
+  touch-action: auto;
+  -webkit-overflow-scrolling: auto;
+  cursor: default;
 }
 
 .catalog-grid {
@@ -1245,8 +1226,8 @@ section[id] {
 
 .catalog-card {
   overflow: hidden;
-  scroll-snap-align: start;
-  width: min(100%, 22rem);
+  scroll-snap-align: unset;
+  width: 100%;
   border-radius: 32px;
   background: var(--surface-strong);
   border-color: rgba(57, 33, 10, 0.08);
@@ -1381,23 +1362,14 @@ section[id] {
 }
 
 .gallery-grid {
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(250px, 22rem);
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding-bottom: 0.35rem;
-  scroll-snap-type: x proximity;
-  overscroll-behavior-x: contain;
-  overscroll-behavior-y: auto;
-  touch-action: pan-x pan-y pinch-zoom;
-  -webkit-overflow-scrolling: touch;
-  cursor: grab;
-}
-
-.catalog-grid.is-dragging,
-.gallery-grid.is-dragging {
-  cursor: grabbing;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  overflow: visible;
+  padding-bottom: 0;
   scroll-snap-type: none;
+  overscroll-behavior: auto;
+  touch-action: auto;
+  -webkit-overflow-scrolling: auto;
+  cursor: default;
 }
 
 .gallery-card {
@@ -1407,6 +1379,22 @@ section[id] {
   border-radius: 34px;
   background: var(--surface-strong);
   border-color: rgba(57, 33, 10, 0.08);
+}
+
+.catalog-card-link,
+.gallery-card-link {
+  display: block;
+  color: inherit;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.catalog-card-link:hover,
+.catalog-card-link:focus-visible,
+.gallery-card-link:hover,
+.gallery-card-link:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px rgba(35, 21, 11, 0.16);
+  outline: none;
 }
 
 .gallery-card .media-frame {
@@ -2902,7 +2890,7 @@ blockquote {
 
   .catalog-grid,
   .gallery-grid {
-    grid-auto-columns: minmax(240px, 26rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .detail-category-grid {
@@ -3094,8 +3082,7 @@ blockquote {
 
   .catalog-grid,
   .gallery-grid {
-    grid-auto-columns: 100%;
-    scroll-snap-type: x mandatory;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .awards-carousel {
@@ -3319,6 +3306,11 @@ blockquote {
 }
 
 @media (max-width: 520px) {
+  .catalog-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
   .detail-category-grid {
     grid-template-columns: 1fr;
   }
