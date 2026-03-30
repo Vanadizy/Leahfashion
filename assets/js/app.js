@@ -511,7 +511,7 @@ function renderSite() {
     siteFooter.style.backgroundImage = `url("${siteContent.hero.image}")`;
   }
   setText("hero-eyebrow", siteContent.hero.eyebrow);
-  setText("hero-title", siteContent.hero.title);
+  renderHeroTitle("hero-title", siteContent.hero.title);
   setText("hero-text", siteContent.hero.text);
   setText(
     "hero-badge-text",
@@ -1589,6 +1589,39 @@ function setText(id, value) {
   }
 
   element.textContent = value || "";
+}
+
+function renderHeroTitle(id, value) {
+  const element = document.getElementById(id);
+  const title = String(value || "").trim();
+
+  if (!element) {
+    return;
+  }
+
+  if (!title) {
+    element.textContent = "";
+    return;
+  }
+
+  const words = title.split(/\s+/);
+
+  if (words.length < 2) {
+    element.textContent = title;
+    return;
+  }
+
+  const firstWord = words.shift();
+  const lastWord = words.pop();
+  const middle = words.join(" ");
+
+  element.innerHTML = [
+    `<span class="hero-title-highlight">${escapeHtml(firstWord)}</span>`,
+    middle ? escapeHtml(middle) : "",
+    `<span class="hero-title-highlight">${escapeHtml(lastWord)}</span>`
+  ]
+    .filter(Boolean)
+    .join(" ");
 }
 
 function mergeWithDefaults(defaultValue, storedValue) {

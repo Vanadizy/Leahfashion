@@ -15,7 +15,7 @@
   --accent-deep: #93672e;
   --shadow: 0 18px 60px rgba(34, 21, 10, 0.14);
   --display-font: "Cormorant Garamond", Georgia, serif;
-  --hero-title-font: "Black Spider", "BlackSpider", "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
+  --hero-title-font: "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
   --heading-font: "Cormorant Garamond", Georgia, serif;
   --body-font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   --section-space: clamp(3.2rem, 5.5vw, 5.8rem);
@@ -505,6 +505,7 @@ h1 {
   width: min(100%, 58rem);
   max-width: none;
   margin-inline-start: clamp(0.3rem, 2.8vw, 2.6rem);
+  text-align: left;
   will-change: opacity, transform, filter;
   transition: opacity 320ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
     filter 320ms ease;
@@ -528,13 +529,17 @@ h1 {
   width: min(100%, 47rem);
   max-width: none;
   font-family: var(--hero-title-font);
-  font-size: clamp(2.45rem, 2.65vw + 1.2rem, 3.45rem);
-  line-height: 1;
-  letter-spacing: 0.015em;
+  font-size: clamp(2.4rem, 2.5vw + 1.2rem, 3.3rem);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 600;
   text-wrap: pretty;
   text-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+.hero-title-highlight {
+  color: #f3d594;
 }
 
 .hero-description {
@@ -776,8 +781,8 @@ section[id] {
   position: relative;
   display: grid;
   grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: auto;
+  margin-inline: calc(50% - 50vw);
   gap: 0;
   align-items: start;
   overflow: hidden;
@@ -2899,7 +2904,6 @@ blockquote {
     background-size: cover;
   }
 
-  .hero-copy,
   .section-heading,
   .split-heading,
   .awards-heading,
@@ -2909,7 +2913,6 @@ blockquote {
     text-align: center;
   }
 
-  .hero-copy,
   .page-hero-copy,
   .detail-intro,
   .split-heading {
@@ -2919,18 +2922,20 @@ blockquote {
   .hero-copy {
     width: min(100%, 35rem);
     padding-inline: clamp(0.45rem, 3.5vw, 0.95rem);
+    margin-inline: 0;
+    text-align: left;
   }
 
   .hero-description {
     max-width: 100%;
     font-size: 1rem;
     line-height: 1.62;
-    margin-inline: auto;
+    margin-inline: 0;
   }
 
   .hero-actions {
     gap: 0.8rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .hero-link-action,
