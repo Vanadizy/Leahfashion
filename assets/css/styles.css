@@ -1323,17 +1323,18 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  padding: 0.88rem 1.12rem;
+  min-width: 152px;
+  min-height: 48px;
+  padding: 0.9rem 1.35rem;
   border-radius: 999px;
-  border: 1px solid rgba(212, 169, 90, 0.3);
-  background: linear-gradient(135deg, rgba(245, 236, 225, 0.98), rgba(235, 216, 191, 0.94));
-  color: var(--accent-deep);
-  font-size: 0.8rem;
+  border: 1px solid rgba(243, 213, 148, 0.52);
+  background: linear-gradient(135deg, rgba(245, 214, 152, 0.92), rgba(212, 169, 90, 0.96));
+  color: #2b1a0a;
+  font-size: 0.84rem;
   font-weight: 800;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  box-shadow: 0 12px 26px rgba(35, 21, 11, 0.12);
+  box-shadow: 0 18px 36px rgba(212, 169, 90, 0.28);
   transition: transform 180ms ease, box-shadow 180ms ease,
     background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
@@ -1343,10 +1344,10 @@ section[id] {
 .section-button:hover,
 .section-button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 16px 30px rgba(35, 21, 11, 0.16);
-  background: linear-gradient(135deg, rgba(247, 241, 232, 1), rgba(239, 222, 198, 0.98));
-  border-color: rgba(212, 169, 90, 0.42);
-  color: #7b5320;
+  background: linear-gradient(135deg, rgba(249, 225, 176, 0.98), rgba(224, 182, 102, 1));
+  border-color: rgba(255, 235, 186, 0.62);
+  color: #201206;
+  box-shadow: 0 20px 40px rgba(212, 169, 90, 0.34);
 }
 
 .carousel-dots {
@@ -2181,6 +2182,40 @@ blockquote {
   gap: 1.8rem;
 }
 
+.detail-groups {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.detail-category {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.detail-category-head {
+  max-width: 46rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.detail-category-head h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.3vw, 2rem);
+  color: var(--accent-deep);
+}
+
+.detail-category-head p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.detail-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
 .detail-card {
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
@@ -2204,6 +2239,60 @@ blockquote {
 
 .detail-card:nth-child(even) .detail-copy {
   order: 1;
+}
+
+.detail-style-card,
+.detail-style-card:nth-child(even) {
+  grid-template-columns: 1fr;
+  gap: 0.95rem;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.detail-style-card:nth-child(even) .detail-media,
+.detail-style-card:nth-child(even) .detail-copy {
+  order: initial;
+}
+
+.detail-style-card:hover,
+.detail-style-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(212, 169, 90, 0.26);
+  box-shadow: 0 22px 40px rgba(35, 21, 11, 0.16);
+  outline: none;
+}
+
+.detail-style-card .detail-media {
+  border-radius: 26px;
+}
+
+.detail-style-card .detail-media img {
+  min-height: 0;
+  aspect-ratio: 4 / 5;
+}
+
+.detail-style-card .detail-copy {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.detail-style-card .detail-copy h3 {
+  font-size: 1.38rem;
+  line-height: 1.18;
+  margin: 0.2rem 0 0;
+}
+
+.detail-style-card .detail-copy p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.detail-list--modal {
+  display: none;
 }
 
 .detail-media {
@@ -2248,6 +2337,125 @@ blockquote {
 }
 
 .detail-list strong {
+  display: block;
+  margin-bottom: 0.22rem;
+  color: var(--accent-deep);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 140;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(17, 10, 4, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(72rem, 100%);
+  max-height: min(90vh, 50rem);
+  overflow: auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.92fr) minmax(0, 1.08fr);
+  gap: 0;
+  border-radius: 32px;
+  border: 1px solid rgba(243, 213, 148, 0.16);
+  background:
+    linear-gradient(145deg, rgba(255, 251, 245, 0.98), rgba(243, 228, 209, 0.96)),
+    radial-gradient(circle at top right, rgba(212, 169, 90, 0.16), transparent 26%);
+  box-shadow: 0 28px 70px rgba(14, 8, 4, 0.28);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 169, 90, 0.18);
+  background: rgba(255, 250, 243, 0.9);
+  color: var(--accent-deep);
+  box-shadow: 0 14px 30px rgba(35, 21, 11, 0.12);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 250, 243, 1);
+  box-shadow: 0 16px 34px rgba(35, 21, 11, 0.16);
+  outline: none;
+}
+
+.lightbox-close span {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.lightbox-media {
+  overflow: hidden;
+  border-radius: 32px 0 0 32px;
+  background: rgba(226, 204, 174, 0.28);
+}
+
+.lightbox-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 26rem;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.lightbox-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: 2rem 1.7rem 1.7rem;
+}
+
+.lightbox-copy h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.04;
+}
+
+.lightbox-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.lightbox-details {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.lightbox-details:empty {
+  display: none;
+}
+
+.lightbox-details > div {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(212, 169, 90, 0.08);
+  color: var(--ink);
+  line-height: 1.62;
+}
+
+.lightbox-details strong {
   display: block;
   margin-bottom: 0.22rem;
   color: var(--accent-deep);
@@ -2889,8 +3097,34 @@ blockquote {
     order: initial;
   }
 
+  .detail-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-style-card,
+  .detail-style-card:nth-child(even) {
+    padding: 0.95rem;
+  }
+
   .detail-media img {
     min-height: 260px;
+  }
+
+  .lightbox-dialog {
+    grid-template-columns: 1fr;
+    max-height: min(92vh, 54rem);
+  }
+
+  .lightbox-media {
+    border-radius: 32px 32px 0 0;
+  }
+
+  .lightbox-media img {
+    min-height: 18rem;
+  }
+
+  .lightbox-copy {
+    padding: 1.35rem 1.1rem 1.2rem;
   }
 
   .floating-actions {

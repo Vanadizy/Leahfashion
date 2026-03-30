@@ -545,6 +545,24 @@
       ".detail-intro p",
       "Leah Fashion hubuni mavazi ya maharusi na hafla kwa wateja wanaotaka umbo lenye nguvu, mwendo wa kifahari, na ukamilishaji unaobaki kuwa wa binafsi. Kila mkusanyiko hapa chini unaonyesha jinsi studio inavyokaribia mavazi ya ibada kuu, mapokezi, na maendeleo ya couture maalum."
     );
+    setText("#catalog-category-1-kicker", "Sherehe Kuu");
+    setText("#catalog-category-1-title", "Saini za Sherehe Kuu");
+    setText(
+      "#catalog-category-1-text",
+      "Mionekano ya maharusi iliyosafishwa kwa ajili ya kuingia kwa heshima, picha za karibu, na sehemu ya kifahari zaidi ya siku ya harusi."
+    );
+    setText("#catalog-category-2-kicker", "Mapokezi na Hafla");
+    setText("#catalog-category-2-title", "Mionekano ya Mapokezi");
+    setText(
+      "#catalog-category-2-text",
+      "Mitindo ya kuvutia zaidi iliyopangwa kwa kuingia kwa pili, styling ya sherehe, na fashion ya hafla baada ya ibada kuu."
+    );
+    setText("#catalog-category-3-kicker", "Mwongozo wa Styling");
+    setText("#catalog-category-3-title", "Msaada wa Studio");
+    setText(
+      "#catalog-category-3-text",
+      "Mwongozo wa styling na vipimo unaounganisha muonekano wa ibada kuu, wa mapokezi, na uwasilishaji mzima wa bibi harusi."
+    );
 
     document.querySelectorAll(".detail-card").forEach((card, index) => {
       const translation = catalogCardsSw[index];
@@ -588,6 +606,24 @@
     setText(
       ".detail-intro p",
       "Picha hizi zinaonyesha utofauti wa Leah Fashion: umaridadi wa maharusi, mitindo ya mapokezi yenye nguvu, nyakati za vipimo maalum, na maelezo ya mavazi ya hafla yenye kujieleza."
+    );
+    setText("#gallery-category-1-kicker", "Nyakati za Studio");
+    setText("#gallery-category-1-title", "Ndani ya Atelier ya Leah Fashion");
+    setText(
+      "#gallery-category-1-text",
+      "Nyuma ya pazia za studio zinazoonyesha uwepo wa mwanzilishi, hali ya vipimo, na mchakato wa karibu wa kila vazi la maharusi."
+    );
+    setText("#gallery-category-2-kicker", "Maelezo ya Maharusi");
+    setText("#gallery-category-2-title", "Neema, Mwisho, na Texture");
+    setText(
+      "#gallery-category-2-text",
+      "Picha zilizopangwa kuonyesha umbo la maharusi, ubora wa ukamilishaji, na maelezo yanayounda utambulisho wa taswira wa Leah Fashion."
+    );
+    setText("#gallery-category-3-kicker", "Nguvu ya Sherehe");
+    setText("#gallery-category-3-title", "Hali ya Mapokezi na Hafla");
+    setText(
+      "#gallery-category-3-text",
+      "Momenti za kifasheni zenye nguvu zinazoonyesha mwendo, utofauti, na namna muonekano uliokamilika unavyobeba kujiamini wakati wa sherehe."
     );
 
     document.querySelectorAll(".detail-card").forEach((card, index) => {

@@ -5,6 +5,15 @@ const navToggle = document.getElementById("nav-toggle");
 const siteNav = document.getElementById("site-nav");
 const floatingActions = document.getElementById("floating-actions");
 const backToTopButton = document.getElementById("back-to-top");
+const detailCards = Array.from(document.querySelectorAll(".detail-style-card"));
+const lightbox = document.getElementById("detail-lightbox");
+const lightboxBackdrop = document.getElementById("lightbox-backdrop");
+const lightboxCloseButton = document.getElementById("lightbox-close");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxKicker = document.getElementById("lightbox-kicker");
+const lightboxTitle = document.getElementById("lightbox-title");
+const lightboxText = document.getElementById("lightbox-text");
+const lightboxDetails = document.getElementById("lightbox-details");
 const i18n = window.LeahI18n || null;
 
 function setNavOpen(isOpen) {
@@ -47,6 +56,7 @@ function closeNavOnOutsideClick(event) {
 function closeNavOnEscape(event) {
   if (event.key === "Escape") {
     closeNav();
+    closeLightbox();
   }
 }
 
@@ -72,11 +82,69 @@ function getPageKey() {
     : "catalog";
 }
 
+function openLightbox(card) {
+  if (
+    !lightbox ||
+    !lightboxImage ||
+    !lightboxKicker ||
+    !lightboxTitle ||
+    !lightboxText ||
+    !lightboxDetails
+  ) {
+    return;
+  }
+
+  const image = card.querySelector(".detail-media img");
+  const kicker = card.querySelector(".section-tag");
+  const title = card.querySelector("h3");
+  const text = card.querySelector("h3 + p");
+  const details = card.querySelector(".detail-list");
+
+  lightboxImage.src = image?.src || "";
+  lightboxImage.alt = image?.alt || "";
+  lightboxKicker.textContent = kicker?.textContent?.trim() || "";
+  lightboxTitle.textContent = title?.textContent?.trim() || "";
+  lightboxText.textContent = text?.textContent?.trim() || "";
+  lightboxDetails.innerHTML = details ? details.innerHTML : "";
+
+  lightbox.hidden = false;
+  document.body.classList.add("panel-open");
+}
+
+function closeLightbox() {
+  if (!lightbox) {
+    return;
+  }
+
+  lightbox.hidden = true;
+  document.body.classList.remove("panel-open");
+}
+
+function onDetailCardKeydown(event) {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openLightbox(event.currentTarget);
+  }
+}
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", toggleNav);
   siteNav.addEventListener("click", closeNavOnLink);
   document.addEventListener("click", closeNavOnOutsideClick);
   document.addEventListener("keydown", closeNavOnEscape);
+}
+
+detailCards.forEach((card) => {
+  card.addEventListener("click", () => openLightbox(card));
+  card.addEventListener("keydown", onDetailCardKeydown);
+});
+
+if (lightboxBackdrop) {
+  lightboxBackdrop.addEventListener("click", closeLightbox);
+}
+
+if (lightboxCloseButton) {
+  lightboxCloseButton.addEventListener("click", closeLightbox);
 }
 
 if (backToTopButton) {
