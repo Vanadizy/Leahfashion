@@ -15,7 +15,7 @@
   --accent-deep: #93672e;
   --shadow: 0 18px 60px rgba(34, 21, 10, 0.14);
   --display-font: "Cormorant Garamond", Georgia, serif;
-  --hero-title-font: "Black Spider", "BlackSpider", "Cormorant Garamond", Georgia, serif;
+  --hero-title-font: "Black Spider", "BlackSpider", "Bodoni Moda", "Cormorant Garamond", Georgia, serif;
   --heading-font: "Cormorant Garamond", Georgia, serif;
   --body-font: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   --section-space: clamp(3.2rem, 5.5vw, 5.8rem);
@@ -25,7 +25,7 @@
 html {
   width: 100%;
   max-width: 100%;
-  font-size: 87.5%;
+  font-size: 90%;
   overflow-x: hidden;
   overflow-x: clip;
   background:
@@ -528,9 +528,9 @@ h1 {
   width: min(100%, 47rem);
   max-width: none;
   font-family: var(--hero-title-font);
-  font-size: clamp(2.2rem, 2.35vw + 1.15rem, 3rem);
-  line-height: 1.02;
-  letter-spacing: 0.01em;
+  font-size: clamp(2.45rem, 2.65vw + 1.2rem, 3.45rem);
+  line-height: 1;
+  letter-spacing: 0.015em;
   font-style: italic;
   font-weight: 700;
   text-wrap: pretty;
@@ -540,7 +540,7 @@ h1 {
 .hero-description {
   max-width: 56ch;
   margin: 1rem 0 0;
-  font-size: clamp(1rem, 0.55vw + 0.86rem, 1.14rem);
+  font-size: clamp(1.08rem, 0.65vw + 0.9rem, 1.24rem);
   line-height: 1.68;
   color: rgba(255, 249, 241, 0.88);
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
@@ -750,7 +750,7 @@ section[id] {
 .section-heading p:last-child,
 .split-heading p {
   margin: 0.8rem 0 0;
-  font-size: 0.98rem;
+  font-size: 1.04rem;
   line-height: 1.65;
 }
 
@@ -1043,7 +1043,7 @@ section[id] {
 .value-item p,
 .contact-card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   line-height: 1.6;
 }
 
@@ -1293,12 +1293,12 @@ section[id] {
 }
 
 .catalog-copy p {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   line-height: 1.62;
 }
 
 .gallery-copy p {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   line-height: 1.66;
 }
 
@@ -1637,7 +1637,7 @@ blockquote {
 .contact-form-intro {
   margin: 0.82rem 0 0;
   color: rgba(60, 40, 18, 0.8);
-  font-size: 0.98rem;
+  font-size: 1.04rem;
   line-height: 1.7;
 }
 
@@ -1678,7 +1678,7 @@ blockquote {
   background: rgba(255, 251, 246, 0.96);
   color: var(--ink);
   font: inherit;
-  font-size: 0.94rem;
+  font-size: 1rem;
   line-height: 1.5;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
@@ -1714,7 +1714,7 @@ blockquote {
 .form-note {
   margin: 0;
   color: rgba(60, 40, 18, 0.74);
-  font-size: 0.88rem;
+  font-size: 0.94rem;
   line-height: 1.62;
 }
 
@@ -1722,7 +1722,7 @@ blockquote {
   min-height: 1.2rem;
   margin: 0;
   color: var(--accent-deep);
-  font-size: 0.9rem;
+  font-size: 0.96rem;
   line-height: 1.55;
 }
 
@@ -1980,7 +1980,7 @@ blockquote {
 .footer-note {
   margin: 0;
   color: rgba(255, 246, 228, 0.76);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.75;
   text-align: center;
 }
@@ -2227,7 +2227,7 @@ blockquote {
 
 .detail-copy p {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   line-height: 1.72;
   color: var(--muted);
 }
@@ -2243,7 +2243,7 @@ blockquote {
   border-radius: 20px;
   background: rgba(212, 169, 90, 0.08);
   color: var(--ink);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.62;
 }
 
@@ -2659,13 +2659,13 @@ blockquote {
   .hero-copy h1 {
     width: 100%;
     max-width: none;
-    font-size: clamp(1.9rem, 7vw, 2.3rem);
-    line-height: 1.08;
+    font-size: clamp(2.15rem, 8vw, 2.7rem);
+    line-height: 1.04;
   }
 
   .hero-description {
-    font-size: 0.88rem;
-    line-height: 1.56;
+    font-size: 1rem;
+    line-height: 1.62;
   }
 
   .statement-card,
@@ -2715,8 +2715,8 @@ blockquote {
 
   .hero-description {
     max-width: 100%;
-    font-size: 0.88rem;
-    line-height: 1.56;
+    font-size: 1rem;
+    line-height: 1.62;
     margin-inline: auto;
   }
 
