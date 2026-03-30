@@ -18,10 +18,12 @@ const lightboxTitle = document.getElementById("lightbox-title");
 const lightboxText = document.getElementById("lightbox-text");
 const lightboxDetails = document.getElementById("lightbox-details");
 const lightboxRequestButton = document.getElementById("lightbox-request");
+const detailCategories = Array.from(document.querySelectorAll(".detail-category"));
 const i18n = window.LeahI18n || null;
 let currentLightboxIndex = -1;
 let lastLightboxTrigger = null;
 let lightboxCloseTimer = null;
+const CATEGORY_COLLAPSE_LIMIT = 12;
 
 function setNavOpen(isOpen) {
   if (!siteNav || !navToggle) {
@@ -104,6 +106,48 @@ function getPageKey() {
     : "catalog";
 }
 
+function getUiText(key, fallback) {
+  return i18n ? i18n.t(key) : fallback;
+}
+
+function setupCategoryToggles() {
+  detailCategories.forEach((category) => {
+    const grid = category.querySelector(".detail-category-grid");
+    const cards = Array.from(grid?.querySelectorAll(".detail-style-card") || []);
+    if (!grid || cards.length <= CATEGORY_COLLAPSE_LIMIT) {
+      return;
+    }
+
+    grid.classList.add("is-collapsed");
+    category.classList.add("has-toggle");
+
+    let toggleWrap = category.querySelector(".detail-category-toggle-wrap");
+    if (!toggleWrap) {
+      toggleWrap = document.createElement("div");
+      toggleWrap.className = "detail-category-toggle-wrap";
+      toggleWrap.innerHTML = `
+        <button class="detail-category-toggle" type="button" aria-expanded="false">
+          ${getUiText("viewAll", "View All")}
+        </button>
+      `;
+      grid.insertAdjacentElement("afterend", toggleWrap);
+    }
+
+    const toggle = toggleWrap.querySelector(".detail-category-toggle");
+    if (!toggle) {
+      return;
+    }
+
+    toggle.addEventListener("click", () => {
+      const isExpanded = grid.classList.toggle("is-collapsed") === false;
+      toggle.setAttribute("aria-expanded", String(isExpanded));
+      toggle.textContent = isExpanded
+        ? getUiText("showLess", "Show Less")
+        : getUiText("viewAll", "View All");
+    });
+  });
+}
+
 function createDetailItem(title, text) {
   const item = document.createElement("div");
   const strong = document.createElement("strong");
@@ -180,9 +224,7 @@ function syncLightboxContent(card) {
   lightboxText.textContent = text?.textContent?.trim() || "";
   renderLightboxDetails(card);
   if (lightboxRequestButton) {
-    lightboxRequestButton.textContent = i18n
-      ? i18n.t("requestFitting", "Request a Fitting")
-      : "Request a Fitting";
+    lightboxRequestButton.textContent = getUiText("requestFitting", "Request a Fitting");
     lightboxRequestButton.setAttribute("href", "index.html#contact");
   }
   syncLightboxNavigation();
@@ -306,5 +348,6 @@ if (i18n) {
   i18n.mountLanguageMenu();
 }
 
+setupCategoryToggles();
 syncHeaderState();
 syncFloatingActions();

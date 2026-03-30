@@ -2262,6 +2262,43 @@ blockquote {
   gap: 0.85rem;
 }
 
+.detail-category-grid.is-collapsed > .detail-style-card:nth-child(n + 13) {
+  display: none;
+}
+
+.detail-category-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7rem;
+}
+
+.detail-category-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 169, 90, 0.24);
+  background: rgba(255, 250, 243, 0.88);
+  color: var(--accent-deep);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 28px rgba(35, 21, 11, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease,
+    background-color 180ms ease, color 180ms ease;
+}
+
+.detail-category-toggle:hover,
+.detail-category-toggle:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(212, 169, 90, 0.16);
+  box-shadow: 0 16px 30px rgba(35, 21, 11, 0.12);
+  outline: none;
+}
+
 .detail-card {
   display: grid;
   grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
@@ -2456,10 +2493,10 @@ blockquote {
 }
 
 .lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 150;
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 999px;
@@ -2484,9 +2521,9 @@ blockquote {
 }
 
 .lightbox-nav {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  z-index: 2;
+  z-index: 150;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2519,11 +2556,11 @@ blockquote {
 }
 
 .lightbox-nav--prev {
-  left: 1rem;
+  left: max(1rem, env(safe-area-inset-left));
 }
 
 .lightbox-nav--next {
-  right: 1rem;
+  right: max(1rem, env(safe-area-inset-right));
 }
 
 .lightbox-nav span {
@@ -3307,6 +3344,7 @@ blockquote {
   .detail-style-card,
   .detail-style-card:nth-child(even) {
     padding: 0;
+    border-radius: 0;
   }
 
   .detail-style-card .detail-copy {
@@ -3367,16 +3405,16 @@ blockquote {
   }
 
   .lightbox-nav--prev {
-    left: 0.65rem;
+    left: max(0.65rem, env(safe-area-inset-left));
   }
 
   .lightbox-nav--next {
-    right: 0.65rem;
+    right: max(0.65rem, env(safe-area-inset-right));
   }
 
   .lightbox-close {
-    top: 0.7rem;
-    right: 0.7rem;
+    top: max(0.7rem, env(safe-area-inset-top));
+    right: max(0.7rem, env(safe-area-inset-right));
   }
 
   .lightbox-actions {
