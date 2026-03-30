@@ -317,27 +317,97 @@
     {
       tag: "Studio Presence",
       title: "Mtazamo wa atelier ulio nyuma ya chapa.",
-      text: "Picha hii ya studio inaonyesha kujiamini na ushiriki binafsi unaoitambulisha Leah Fashion. Wateja hawapati mchakato wa mbali. Wanapitia safari ya karibu, iliyoongozwa, na yenye ubunifu kuanzia wazo hadi kipimo."
-    },
-    {
-      tag: "Bridal Finish",
-      title: "Mwonekano safi wa maharusi ulioundwa kwa neema na utulivu wa kujiamini.",
-      text: "Muonekano huu unaonyesha muundo uliozuiliwa na umaridadi wa utulivu ambao Leah Fashion hulenga katika vipande vya maharusi. Umbo limesafishwa, ukamilishaji ni laini, na matokeo ya picha hubaki ya kudumu."
+      text: "Picha hii ya studio inaonyesha kujiamini na ushiriki binafsi unaoitambulisha Leah Fashion. Wateja hawapati mchakato wa mbali. Wanapitia safari ya karibu, iliyoongozwa, na yenye ubunifu kuanzia wazo hadi kipimo.",
+      list: [
+        {
+          title: "Tukio",
+          text: "Siku ya Vipimo Studio"
+        },
+        {
+          title: "Lengo",
+          text: "Mwongozo wa mwanzilishi, hali ya ushauri, na hisia ya kwanza ya atelier."
+        },
+        {
+          title: "Maelezo ya picha",
+          text: "Picha hii humtambulisha mtu na uwepo ulio nyuma ya Leah Fashion."
+        }
+      ]
     },
     {
       tag: "Happy Fitting",
       title: "Hisia ya mwisho ni muhimu kama vazi lenyewe.",
-      text: "Sababu moja inayowafanya wateja warudi Leah Fashion ni uzoefu wa vipimo. Sio suala la vipimo pekee. Ni kumsaidia mteja ajisikie mwenye furaha, kuonekana, na kuwa huru kabisa ndani ya vazi lililokamilika."
+      text: "Sababu moja inayowafanya wateja warudi Leah Fashion ni uzoefu wa vipimo. Sio suala la vipimo pekee. Ni kumsaidia mteja ajisikie mwenye furaha, kuonekana, na kuwa huru kabisa ndani ya vazi lililokamilika.",
+      list: [
+        {
+          title: "Tukio",
+          text: "Siku ya Vipimo Studio"
+        },
+        {
+          title: "Lengo",
+          text: "Utulivu wa mteja, kujiamini kwenye kipimo, na furaha ya kuona muonekano wa mwisho."
+        },
+        {
+          title: "Maelezo ya picha",
+          text: "Tabasamu na mwonekano vinaonyesha namna studio inavyounganisha uzuri na urahisi."
+        }
+      ]
+    },
+    {
+      tag: "Bridal Finish",
+      title: "Mwonekano safi wa maharusi ulioundwa kwa neema na utulivu wa kujiamini.",
+      text: "Muonekano huu unaonyesha muundo uliozuiliwa na umaridadi wa utulivu ambao Leah Fashion hulenga katika vipande vya maharusi. Umbo limesafishwa, ukamilishaji ni laini, na matokeo ya picha hubaki ya kudumu.",
+      list: [
+        {
+          title: "Tukio",
+          text: "Kikao cha Picha za Harusi"
+        },
+        {
+          title: "Lengo",
+          text: "Umbo la sherehe kuu, mkao wa utulivu wa bibi harusi, na ukamilishaji uliosafishwa kwenye mwanga wa asili."
+        },
+        {
+          title: "Maelezo ya picha",
+          text: "Mistari ya gauni na mpangilio wa picha za nje vinaonyesha anasa ya utulivu ya ubunifu huu."
+        }
+      ]
     },
     {
       tag: "Detail Direction",
       title: "Texture, mapambo, na ukamilishaji wa kuvutia.",
-      text: "Picha hii inaonyesha upande tajiri zaidi wa chapa ambapo rangi zenye nguvu, ushonaji wa vito, na uwepo wa hafla huwa kitovu. Mtindo unabaki wa juu huku ukibaki ndani ya utambulisho wa joto wa tovuti."
+      text: "Picha hii inaonyesha upande tajiri zaidi wa chapa ambapo rangi zenye nguvu, ushonaji wa vito, na uwepo wa hafla huwa kitovu. Mtindo unabaki wa juu huku ukibaki ndani ya utambulisho wa joto wa tovuti.",
+      list: [
+        {
+          title: "Tukio",
+          text: "Kikao cha Picha za Harusi"
+        },
+        {
+          title: "Lengo",
+          text: "Texture ya uso wa vazi, mapambo, na upande wa couture wenye uzito wa Leah Fashion."
+        },
+        {
+          title: "Maelezo ya picha",
+          text: "Picha hii imejikita zaidi kwenye ukamilishaji na maelezo kuliko mandhari pana ya tukio."
+        }
+      ]
     },
     {
       tag: "Reception Energy",
       title: "Mitindo ya sherehe yenye mwendo na mvuto mkubwa.",
-      text: "Picha za mapokezi zinaipa galeri nguvu zaidi ya kifasheni. Zinaonyesha namna Leah Fashion inavyosawazisha mvuto na uvaaji ili mteja aweze kutembea, kupiga picha, na kusherehekea kwa utulivu bila kupoteza athari ya mwonekano."
+      text: "Picha za mapokezi zinaipa galeri nguvu zaidi ya kifasheni. Zinaonyesha namna Leah Fashion inavyosawazisha mvuto na uvaaji ili mteja aweze kutembea, kupiga picha, na kusherehekea kwa utulivu bila kupoteza athari ya mwonekano.",
+      list: [
+        {
+          title: "Tukio",
+          text: "Usiku wa Sherehe za Mapokezi"
+        },
+        {
+          title: "Lengo",
+          text: "Mwendo, styling ya kuingia, na kauli imara ya fashion ya jioni."
+        },
+        {
+          title: "Maelezo ya picha",
+          text: "Muonekano huu unaonyesha mabadiliko kutoka umaridadi wa ibada kuu hadi nguvu ya sherehe."
+        }
+      ]
     }
   ];
 
@@ -607,23 +677,23 @@
       ".detail-intro p",
       "Picha hizi zinaonyesha utofauti wa Leah Fashion: umaridadi wa maharusi, mitindo ya mapokezi yenye nguvu, nyakati za vipimo maalum, na maelezo ya mavazi ya hafla yenye kujieleza."
     );
-    setText("#gallery-category-1-kicker", "Nyakati za Studio");
-    setText("#gallery-category-1-title", "Ndani ya Atelier ya Leah Fashion");
+    setText("#gallery-category-1-kicker", "Siku ya Vipimo Studio");
+    setText("#gallery-category-1-title", "Uwepo wa Mwanzilishi na Nyakati za Vipimo");
     setText(
       "#gallery-category-1-text",
-      "Nyuma ya pazia za studio zinazoonyesha uwepo wa mwanzilishi, hali ya vipimo, na mchakato wa karibu wa kila vazi la maharusi."
+      "Mtazamo huu wa tukio unaonyesha hali ya karibu ya studio, ushiriki wa mwanzilishi, na furaha ya mteja wakati wa vipimo."
     );
-    setText("#gallery-category-2-kicker", "Maelezo ya Maharusi");
-    setText("#gallery-category-2-title", "Neema, Mwisho, na Texture");
+    setText("#gallery-category-2-kicker", "Kikao cha Picha za Harusi");
+    setText("#gallery-category-2-title", "Ukamilishaji wa Maharusi na Mwelekeo wa Maelezo");
     setText(
       "#gallery-category-2-text",
-      "Picha zilizopangwa kuonyesha umbo la maharusi, ubora wa ukamilishaji, na maelezo yanayounda utambulisho wa taswira wa Leah Fashion."
+      "Picha hizi za ukubwa wa kati zinaangazia umbo la mwisho la bibi harusi, uzuri wa picha, na maelezo yanayounda utambulisho wa Leah Fashion."
     );
-    setText("#gallery-category-3-kicker", "Nguvu ya Sherehe");
-    setText("#gallery-category-3-title", "Hali ya Mapokezi na Hafla");
+    setText("#gallery-category-3-kicker", "Usiku wa Sherehe za Mapokezi");
+    setText("#gallery-category-3-title", "Muonekano wa Kuingia na Hali ya Hafla");
     setText(
       "#gallery-category-3-text",
-      "Momenti za kifasheni zenye nguvu zinazoonyesha mwendo, utofauti, na namna muonekano uliokamilika unavyobeba kujiamini wakati wa sherehe."
+      "Kundi hili la tukio linaonyesha upande wenye nguvu wa sherehe ambapo mwendo, utofauti, na nguvu ya kuingia huwa sehemu ya muonekano wa mwisho."
     );
 
     document.querySelectorAll(".detail-card").forEach((card, index) => {
@@ -635,6 +705,16 @@
       setText(card.querySelector(".section-tag"), translation.tag);
       setText(card.querySelector("h3"), translation.title);
       setText(card.querySelector("h3 + p"), translation.text);
+
+      const listItems = card.querySelectorAll(".detail-list div");
+      listItems.forEach((item, itemIndex) => {
+        const listTranslation = translation.list?.[itemIndex];
+        if (!listTranslation) {
+          return;
+        }
+
+        item.innerHTML = `<strong>${listTranslation.title}</strong>${listTranslation.text}`;
+      });
     });
 
     setTexts(".section-cta .section-button", ["Fungua Ukurasa wa Katalogi", "Panga Kipimo"]);

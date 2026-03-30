@@ -317,19 +317,40 @@
           aria-modal="true"
           aria-labelledby="lightbox-title"
         >
-          <button
-            class="lightbox-close"
-            id="lightbox-close"
-            type="button"
-            aria-label="Close image viewer"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <div class="lightbox-media">
-            <img id="lightbox-image" src="" alt="" />
+          <div class="lightbox-stage">
+            <button
+              class="lightbox-nav lightbox-nav--prev"
+              id="lightbox-prev"
+              type="button"
+              aria-label="Previous image"
+            >
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+            <button
+              class="lightbox-close"
+              id="lightbox-close"
+              type="button"
+              aria-label="Close image viewer"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="lightbox-media">
+              <img id="lightbox-image" src="" alt="" />
+            </div>
+            <button
+              class="lightbox-nav lightbox-nav--next"
+              id="lightbox-next"
+              type="button"
+              aria-label="Next image"
+            >
+              <span aria-hidden="true">&#8594;</span>
+            </button>
           </div>
           <div class="lightbox-copy">
-            <p class="mini-label" id="lightbox-kicker"></p>
+            <div class="lightbox-meta">
+              <p class="mini-label" id="lightbox-kicker"></p>
+              <p class="lightbox-counter" id="lightbox-counter"></p>
+            </div>
             <h2 id="lightbox-title"></h2>
             <p id="lightbox-text"></p>
             <div class="lightbox-details" id="lightbox-details"></div>
